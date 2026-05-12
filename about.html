@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover the heritage and culinary philosophy of Konkan Curry. A premium coastal dining experience in Navi Mumbai."
+    />
+    <title>About Us - Konkan Curry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body class="kc-body page-about">
+    <div class="kc-page-wrapper">
+      <!-- Header Placeholder -->
+      <!-- Header -->
+      <div
+        class="kc-menu-overlay"
+        id="menu-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <div class="kc-menu-overlay__panel">
+          <div class="kc-menu-overlay__top">
+            <a
+              class="kc-menu-overlay__brand"
+              href="index.html"
+              data-menu-link
+              aria-label="Konkan Curry home"
+            >
+              <img
+                class="kc-menu-overlay__logo"
+                src="assets/images/logo.png"
+                alt="Konkan Curry"
+                decoding="async"
+              />
+            </a>
+            <button
+              class="kc-menu-overlay__close"
+              id="close-menu"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <span>Close</span>
+              <span class="kc-menu-overlay__close-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <nav class="kc-menu-overlay__nav" aria-label="Menu">
+            <a href="index.html" data-menu-link>Home</a>
+            <a href="about.html" data-menu-link>About</a>
+            <a href="menu.html" data-menu-link>Menu</a>
+            <a href="contact.html" data-menu-link>Contact</a>
+            <a href="location/seawoods.html" data-menu-link>Locations</a>
+          </nav>
+        </div>
+      </div>
+
+      <header class="kc-header" id="hero-header">
+        <div class="kc-header__inner container-fluid d-flex justify-content-between align-items-center h-100 px-4">
+          <button
+            class="kc-header__menu"
+            id="mobile-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="menu-overlay"
+          >
+            <span class="kc-header__menu-lines" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+
+          <a
+            class="kc-header__brand"
+            href="index.html"
+            aria-label="Konkan Curry home"
+          >
+            <img
+              class="kc-header__logo"
+              src="assets/images/logo.png"
+              alt="Konkan Curry"
+              decoding="async"
+              style="max-height: 40px;"
+            />
+          </a>
+
+          <a class="kc-button kc-button--primary kc-header__cta" href="contact.html">FIND A TABLE</a>
+        </div>
+      </header>
+
+
+      <main id="page-content" class="kc-page-main">
+        
+        <!-- 1. Inner Hero Section -->
+        <section class="about-hero" aria-label="About Us Hero">
+          <div class="about-hero__bg">
+            <img src="assets/images/location-hero-2.webp" alt="Konkan Curry Interior" fetchpriority="high">
+          </div>
+          <div class="about-hero__overlay"></div>
+          <div class="about-hero__content" data-reveal-hero>
+            <span class="kc-badge">Our Story</span>
+            <h1 class="about-hero__title">Where Coastal Tradition Meets Refined Dining</h1>
+            <p class="about-hero__desc">
+              From the sun-kissed shores of the Konkan to your table in Navi Mumbai, we bring a legacy of authentic flavors, fresh catch, and heartfelt hospitality.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="contact.html" class="kc-button kc-button--primary">Reserve a Table</a>
+              <a href="menu.html" class="kc-button kc-button--secondary text-white border-white/40">Explore Menu</a>
+            </div>
+          </div>
+          <div class="about-scroll-indicator">
+            <span class="text-white/40 small tracking-widest uppercase">Scroll</span>
+            <div class="about-scroll-indicator__line"></div>
+          </div>
+        </section>
+
+        <!-- 2. Brand Story Section -->
+        <section class="py-24 md:py-32 bg-primary" id="brand-story">
+          <div class="container">
+            <div class="row align-items-center gy-5">
+              <div class="col-lg-6 order-2 order-lg-1">
+                <div class="story-pattern-wrapper d-flex justify-content-center">
+                  <img src="assets/images/story-pattern.webp" alt="Coastal Pattern" class="story-pattern" data-reveal="scale">
+                </div>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2">
+                <div class="ps-lg-5" data-reveal>
+                  <span class="kc-badge mb-4" style="background: var(--border-neutral); color: var(--text-primary);">Who We Are</span>
+                  <h2 class="display-3 fw-bold text-primary mb-5">Rooted in the Konkan Coast</h2>
+                  <div class="text-secondary mb-5">
+                    <p class="lead mb-4">Konkan Curry was founded on a simple belief: that coastal Indian cuisine deserves a stage that reflects its depth and sophistication.</p>
+                    <p>Our journey began with a passion for the vibrant culinary traditions of the Konkan—a strip of land defined by the rhythm of the tides and the richness of its spices. We set out to create a destination where these traditions are not just preserved, but elevated through refined technique and a modern aesthetic.</p>
+                  </div>
+                  <div class="d-flex align-items-center gap-4 mb-5">
+                    <img src="assets/images/logo.svg" alt="Signature" class="signature-img" style="max-height: 60px;">
+                    <div>
+                      <p class="mb-0 fw-bold text-primary">The Founders</p>
+                      <p class="small text-secondary mb-0">Konkan Curry Hospitality</p>
+                    </div>
+                  </div>
+                  <a href="menu.html" class="kc-button kc-button--secondary">Discover Our Menu</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Culinary Philosophy Section -->
+        <section class="py-24 md:py-32 bg-secondary" id="philosophy">
+          <div class="container text-center mb-5 pb-4">
+            <div class="max-w-700 mx-auto" data-reveal>
+              <span class="kc-badge mb-4">Our Philosophy</span>
+              <h2 class="display-4 fw-bold text-primary mb-4">Authenticity, Technique, and Respect for Ingredients</h2>
+              <p class="lead text-secondary">We believe the best food is made with a deep respect for the source. Our kitchen is a celebration of the coast's bounty.</p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row g-4">
+              <!-- Card 1 -->
+              <div class="col-md-4" data-reveal="stagger">
+                <div class="philosophy-card">
+                  <div class="philosophy-card__icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                  </div>
+                  <h3 class="h4 fw-bold text-primary mb-3">Fresh Coastal Ingredients</h3>
+                  <p class="text-secondary mb-0">Sourced daily from local harbors, our seafood is the star of every plate. We never compromise on freshness.</p>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="col-md-4" data-reveal="stagger">
+                <div class="philosophy-card">
+                  <div class="philosophy-card__icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                  </div>
+                  <h3 class="h4 fw-bold text-primary mb-3">Traditional Recipes</h3>
+                  <p class="text-secondary mb-0">Our masalas are ground in-house using age-old family recipes passed down through generations of coastal cooks.</p>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="col-md-4" data-reveal="stagger">
+                <div class="philosophy-card">
+                  <div class="philosophy-card__icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.618.309a6 6 0 01-3.86.517l-2.387-.477a2 2 0 00-1.022.547l-1.168 1.168a2 2 0 001.61 3.412h13.419a2 2 0 001.61-3.412l-1.168-1.168zM12 5V3m0 0l-2 2m2-2l2 2"></path></svg>
+                  </div>
+                  <h3 class="h4 fw-bold text-primary mb-3">Contemporary Presentation</h3>
+                  <p class="text-secondary mb-0">While our flavors are traditional, our presentation is artful, creating a dining experience that appeals to all senses.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Founder / Chef Spotlight Section -->
+        <section class="py-24 md:py-32 bg-primary overflow-hidden" id="chef-spotlight">
+          <div class="container">
+            <div class="row align-items-center gy-5">
+              <div class="col-lg-6">
+                <div class="position-relative" data-reveal="left">
+                  <img src="assets/images/visionary-ranjit.webp" alt="Executive Chef" class="img-fluid rounded-4 shadow-lg w-100">
+                  <div class="position-absolute bottom-0 end-0 mb-4 me-4 bg-white p-4 rounded-3 shadow-xl d-none d-md-block" data-reveal="up" style="max-width: 200px;">
+                    <p class="h2 fw-bold text-accent mb-0" style="color: var(--clr-accent);">12+</p>
+                    <p class="small text-uppercase tracking-wider fw-bold mb-0">Years of Culinary Experience</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="ps-lg-5" data-reveal="right">
+                  <span class="kc-badge mb-4">Meet the Chef</span>
+                  <h2 class="display-3 fw-bold text-primary mb-4">Chef Ranjit Bindra</h2>
+                  <p class="fst-italic text-secondary fs-5 mb-5 ps-4 border-start border-main" style="border-width: 4px !important;">
+                    "Coastal cooking is about understanding the soul of the ingredient. You don't master it; you respect it."
+                  </p>
+                  <div class="text-secondary mb-5">
+                    <p class="mb-4">With over a decade of experience in premium kitchens across India, Chef Ranjit brings a meticulous approach to coastal dining. His expertise lies in balancing the bold, punchy flavors of Konkan masalas with the delicate nature of premium seafood.</p>
+                    <p>Under his leadership, the Konkan Curry kitchen has become a laboratory of flavor, where traditional techniques like slow-simmering and tawa-searing are perfected daily.</p>
+                  </div>
+                  <div class="signature-wrapper mb-5">
+                    <img src="assets/images/logo.svg" alt="Chef Signature" class="signature-img" style="opacity: 0.5;">
+                  </div>
+                  <ul class="list-unstyled d-flex flex-wrap gap-4 text-primary fw-bold small text-uppercase tracking-widest">
+                    <li><span class="text-gold me-2">●</span> Culinary Excellence Award</li>
+                    <li><span class="text-gold me-2">●</span> Coastal Masterclass Mentor</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Why Guests Choose Us Section -->
+        <section class="py-24 md:py-32 bg-secondary" id="why-us">
+          <div class="container">
+            <div class="row g-4">
+              <!-- Feature 1 -->
+              <div class="col-md-6 col-lg-3" data-reveal="stagger">
+                <div class="feature-card h-100">
+                  <span class="feature-card__number">01</span>
+                  <h3 class="h4 fw-bold text-primary mb-3">Authentic Konkan Recipes</h3>
+                  <p class="text-secondary small mb-0">Time-tested recipes sourced from coastal households and heritage archives.</p>
+                </div>
+              </div>
+              <!-- Feature 2 -->
+              <div class="col-md-6 col-lg-3" data-reveal="stagger">
+                <div class="feature-card h-100">
+                  <span class="feature-card__number">02</span>
+                  <h3 class="h4 fw-bold text-primary mb-3">Fresh Daily Seafood</h3>
+                  <p class="text-secondary small mb-0">Our procurement team hand-selects the catch every morning for absolute quality.</p>
+                </div>
+              </div>
+              <!-- Feature 3 -->
+              <div class="col-md-6 col-lg-3" data-reveal="stagger">
+                <div class="feature-card h-100">
+                  <span class="feature-card__number">03</span>
+                  <h3 class="h4 fw-bold text-primary mb-3">Warm Family Hospitality</h3>
+                  <p class="text-secondary small mb-0">Rooted in Indian traditions, we treat every guest like a member of our family.</p>
+                </div>
+              </div>
+              <!-- Feature 4 -->
+              <div class="col-md-6 col-lg-3" data-reveal="stagger">
+                <div class="feature-card h-100">
+                  <span class="feature-card__number">04</span>
+                  <h3 class="h4 fw-bold text-primary mb-3">Elegant Dining Experience</h3>
+                  <p class="text-secondary small mb-0">A sophisticated ambience designed to complement our refined culinary offerings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Ambience Gallery Section -->
+        <section class="ambience-gallery py-24 md:py-32" id="gallery">
+          <div class="container mb-5 pb-4">
+            <div class="row align-items-end gy-4">
+              <div class="col-lg-7" data-reveal>
+                <span class="kc-badge mb-4">The Experience</span>
+                <h2 class="display-4 fw-bold mb-4">Designed for Memorable Dining</h2>
+                <p class="lead text-white/70 mb-0">Every corner of Konkan Curry is crafted to provide a sense of refined tranquility, allowing you to focus on the flavor and company.</p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="gallery-grid">
+              <div class="gallery-item" data-reveal="up">
+                <img src="assets/images/about.webp" alt="Main Dining Hall">
+              </div>
+              <div class="gallery-item" data-reveal="up">
+                <img src="assets/images/premium_restaurant_interior_blurred.webp" alt="Bar Area">
+              </div>
+              <div class="gallery-item" data-reveal="up">
+                <img src="assets/images/celebration.webp" alt="Private Dining">
+              </div>
+              <div class="gallery-item" data-reveal="up">
+                <img src="assets/images/location-hero-3.webp" alt="Outdoor Seating">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. Milestones Timeline Section -->
+        <section class="py-24 md:py-32 bg-primary" id="milestones">
+          <div class="container text-center mb-5">
+            <div data-reveal>
+              <span class="kc-badge mb-4" style="background: var(--border-neutral); color: var(--text-primary);">Our Journey</span>
+              <h2 class="display-4 fw-bold text-primary">Milestones Along the Coast</h2>
+            </div>
+          </div>
+          <div class="container">
+            <div class="timeline">
+              <div class="timeline-item" data-reveal="left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2017</span>
+                  <h3 class="h5 fw-bold text-primary">The Vision Begins</h3>
+                  <p class="small text-secondary">Konkan Curry opens its first doors with a mission to redefine coastal Indian dining.</p>
+                </div>
+              </div>
+              <div class="timeline-item timeline-item--even" data-reveal="right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2019</span>
+                  <h3 class="h5 fw-bold text-primary">Signature Menu Launch</h3>
+                  <p class="small text-secondary">Our now-famous Surmai Curry and Prawn Gassi are introduced, becoming instant classics.</p>
+                </div>
+              </div>
+              <div class="timeline-item" data-reveal="left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2021</span>
+                  <h3 class="h5 fw-bold text-primary">Expansion to Seawoods</h3>
+                  <p class="small text-secondary">We expanded our footprint, bringing our premium experience to a wider audience in Navi Mumbai.</p>
+                </div>
+              </div>
+              <div class="timeline-item timeline-item--even" data-reveal="right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2024</span>
+                  <h3 class="h5 fw-bold text-primary">Recognition & Awards</h3>
+                  <p class="small text-secondary">Honored as the 'Best Coastal Dining Destination' for our commitment to authenticity.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. Reservation CTA Section -->
+        <section class="cta-parallax py-24 md:py-40 position-relative overflow-hidden" id="cta" style="background-image: url('assets/images/kc_closing_bg.png'); filter: none;">
+          <div class="position-absolute inset-0 z-0" style="background: rgba(0,0,0,0.6);"></div>
+          <div class="container position-relative z-1 text-center">
+            <div class="max-w-700 mx-auto" data-reveal>
+              <span class="kc-badge mb-4">Reserve Your Table</span>
+              <h2 class="display-3 fw-bold text-white mb-4">Experience Coastal Dining at Its Finest</h2>
+              <p class="lead text-white/80 mb-5">Join us for an evening of authentic flavors, premium hospitality, and memories that linger long after the last bite.</p>
+              <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="contact.html" class="kc-button kc-button--primary">Book Now</a>
+                <a href="menu.html" class="kc-button kc-button--secondary text-white border-white/40">View Menu</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Footer Placeholder -->
+      <!-- Footer -->
+      <footer
+        class="kc-footer kc-footer--pixbuddy bg-light position-relative overflow-hidden pt-5"
+      >
+        <div class="cta-card__container position-relative z-1">
+          <!-- Navigation Columns -->
+          <div class="row gx-5 gy-4 mb-5 pb-4">
+            <!-- Left Branding -->
+            <div class="col-12 col-lg-3 text-center text-lg-start">
+              <a
+                class="kc-footer__brand d-inline-block mb-3"
+                href="index.html"
+                aria-label="Konkan Curry home"
+              >
+                <img
+                  class="kc-footer__logo"
+                  src="assets/images/logo.svg"
+                  alt="Konkan Curry"
+                  decoding="async"
+                  style="filter: brightness(0)"
+                />
+              </a>
+              <p class="small text-muted mb-0 pe-lg-4">
+                A coastal Indian dining experience built around warm hospitality and
+                refined flavors.
+              </p>
+            </div>
+
+            <!-- Links -->
+            <div class="col-12 col-lg-9">
+              <div class="row gy-4 text-center text-md-start">
+                <div class="col-6 col-md-3">
+                  <h6 class="kc-footer__col-title fw-bold text-dark mb-4">
+                    Important Links
+                  </h6>
+                  <ul class="list-unstyled kc-footer__col-links mb-0">
+                    <li class="mb-3">
+                      <a
+                        href="index.html"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="about.html"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >About Us</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="menu.html"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >Menu</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="contact.html"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >Contact</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                  <h6 class="kc-footer__col-title fw-bold text-dark mb-4">
+                    Locations
+                  </h6>
+                  <ul class="list-unstyled kc-footer__col-links mb-0">
+                    <li class="mb-3">
+                      <a
+                        href="location/seawoods.html"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >Seawoods</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="location/vashi.html"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >Vashi</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="location/thane.html"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >Thane</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="location/vasai.html"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >Vasai</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                  <h6 class="kc-footer__col-title fw-bold text-dark mb-4">Support</h6>
+                  <ul class="list-unstyled kc-footer__col-links mb-0">
+                    <li class="mb-3">
+                      <a
+                        href="tel:+912279460958"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >+91 22 7946 0958</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="mailto:contact@konkancurry.com"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >Email Us</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="#"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >FAQ</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 col-md-3">
+                  <h6 class="kc-footer__col-title fw-bold text-dark mb-4">
+                    Social Media
+                  </h6>
+                  <ul class="list-unstyled kc-footer__col-links mb-0">
+                    <li class="mb-3">
+                      <a
+                        href="#"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >Instagram</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="#"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >Facebook</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="#"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >LinkedIn</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="#"
+                        class="text-muted text-decoration-none small kc-footer__link"
+                        >X (Twitter)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Giant Watermark & Pills -->
+        <div
+          class="kc-footer__bottom-area position-relative d-flex justify-content-center align-items-end mt-4 pt-5"
+        >
+          <!-- Huge Outline Text -->
+          <div
+            class="kc-footer__giant-text position-absolute w-100 text-center lh-1 bottom-0 z-0"
+          >
+            KONKAN CURRY
+          </div>
+
+          <!-- Floating Pills -->
+          <div
+            class="container position-relative z-2 pb-4 pb-md-5 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3"
+          >
+            <div
+              class="kc-footer__pill bg-white shadow-sm border rounded-pill px-4 py-2 small fw-medium"
+            >
+              <a href="#" class="text-dark text-decoration-none kc-footer__link me-3">© 2026 Konkan Curry. All rights reserved</a>
+            </div>
+            <div
+              class="kc-footer__pill bg-white shadow-sm border rounded-pill px-4 py-2 small fw-medium"
+            >
+              <a href="#" class="text-dark text-decoration-none kc-footer__link me-3"
+                >&bull; Terms &amp; Condition</a
+              >
+              <a href="#" class="text-dark text-decoration-none kc-footer__link"
+                >&bull; Privacy &amp; Policy</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en" class="light-mode">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Konkan Curry is a luxury dining destination shaped around cinematic evenings, refined service, and a polished waterfront atmosphere."
+      name="description"
+    />
+    <title>Konkan Curry - Our Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <style id="indexnew-component-overrides">
+      :root {
+        --font-family-global: 'DM Sans', sans-serif;
+        --font-family-heading: 'Anton', sans-serif;
+        --heading-weight: 700;
+      }
+
+      @keyframes logoSlideUp {
+        from {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .loc-card:hover img {
+        transform: scale(1.06);
+      }
+
+      .loc-card:hover .loc-card-title {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+      }
+
+      .loc-card:hover .loc-card-arrow {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+      }
+
+      @media (max-width: 640px) {
+        #our-locations > div > div:last-child {
+          grid-template-columns: 1fr !important;
+        }
+
+        #our-locations h2 {
+          font-size: 18vw !important;
+        }
+      }
+    </style>
+    <!-- Flatpickr for premium dark-themed date/time pickers -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "clr-primary": "rgb(var(--clr-primary-rgb) / <alpha-value>)",
+              "clr-dark": "rgb(var(--clr-dark-rgb) / <alpha-value>)",
+              "clr-light": "rgb(var(--clr-light-rgb) / <alpha-value>)",
+              primary: "rgb(var(--clr-primary-rgb) / <alpha-value>)",
+              "on-primary": "rgb(var(--clr-light-rgb) / <alpha-value>)",
+            },
+            fontFamily: {
+              heading: ["var(--font-family-heading)"],
+              body: ["var(--font-family-global)"],
+            },
+            letterSpacing: {
+              "ultra-wide": "0.25em",
+            },
+            animation: {
+              "ken-burns": "kenburns 20s ease infinite alternate",
+            },
+            keyframes: {
+              kenburns: {
+                "0%": {
+                  transform: "scale(1)",
+                },
+                "100%": {
+                  transform: "scale(1.15)",
+                },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-clr-dark text-white antialiased page-menu">
+	<div data-component-src="assets/components/preloader.html"></div>
+	<div data-component-src="assets/components/header.html"></div>
+
+	<main id="page-content">
+
+      <!-- HERO -->
+      <section
+        class="subpage-hero menu-hero relative flex items-center pt-20 overflow-hidden"
+      >
+        <div class="absolute inset-0 opacity-40">
+          <img
+            src="/assets/images/premium_restaurant_interior_blurred.webp"
+            alt=""
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div
+          class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center"
+        >
+          <nav aria-label="Breadcrumb" class="mb-2 w-full">
+            <ol
+              class="flex items-center justify-center gap-4 text-[10px] uppercase tracking-widest text-white/50"
+            >
+              <li>
+                <a href="index.html" class="hover:text-clr-primary">Home</a>
+              </li>
+              <li>/</li>
+              <li class="text-white">Menu</li>
+            </ol>
+          </nav>
+          <h1
+            class="subpage-hero__title text-5xl md:text-8xl font-heading text-white leading-tight"
+          >
+            Our <em>Culinary</em> <br />Selection
+          </h1>
+          <p
+            class="max-w-xl text-lg text-white/60 mt-0 leading-relaxed mx-auto"
+          >
+            Browse signature courses, chef-led selections, and category-driven
+            menus presented with the same polish as the dining room.
+          </p>
+        </div>
+      </section>
+
+    <main class="menu-page">
+      <section class="global-menu" id="global-menu" aria-labelledby="global-menu-title">
+        <div class="section-shell global-menu__shell">
+          <header class="global-menu__header">
+            <h2 class="global-menu__title" id="global-menu-title">Global Menu</h2>
+          </header>
+
+          <div class="global-menu__list" role="list" aria-label="Cuisine categories">
+            <article class="global-menu__item global-menu__item--gsap" id="italian-delights" role="listitem">
+              <div class="global-menu__divider" aria-hidden="true"></div>
+              <div class="global-menu__line global-menu__line--gsap" data-gsap-inline-reveal>
+                <h2 class="global-menu__word global-menu__word--left">Italian</h2>
+                <span class="global-menu__gap global-menu__gap--gsap">
+                  <img
+                    class="global-menu__image global-menu__image--gsap"
+                    src="/assets/images/starters.webp"
+                    alt="Italian dish"
+                  />
+                </span>
+                <h2 class="global-menu__word global-menu__word--right">Delights</h2>
+              </div>
+            </article>
+
+            <article class="global-menu__item global-menu__item--gsap" id="continental-comfort" role="listitem">
+              <div class="global-menu__divider" aria-hidden="true"></div>
+              <div class="global-menu__line global-menu__line--gsap" data-gsap-inline-reveal>
+                <h2 class="global-menu__word global-menu__word--left">Continental</h2>
+                <span class="global-menu__gap global-menu__gap--gsap">
+                  <img
+                    class="global-menu__image global-menu__image--gsap"
+                    src="/assets/images/signature-dishes.webp"
+                    alt="Continental dish"
+                  />
+                </span>
+                <h2 class="global-menu__word global-menu__word--right">Comfort</h2>
+              </div>
+            </article>
+
+            <article class="global-menu__item global-menu__item--gsap" id="lebanese-taste" role="listitem">
+              <div class="global-menu__divider" aria-hidden="true"></div>
+              <div class="global-menu__line global-menu__line--gsap" data-gsap-inline-reveal>
+                <h2 class="global-menu__word global-menu__word--left">Lebanese</h2>
+                <span class="global-menu__gap global-menu__gap--gsap">
+                  <img
+                    class="global-menu__image global-menu__image--gsap"
+                    src="/assets/images/veg.webp"
+                    alt="Lebanese dish"
+                  />
+                </span>
+                <h2 class="global-menu__word global-menu__word--right">Taste</h2>
+              </div>
+            </article>
+
+            <article class="global-menu__item global-menu__item--gsap" id="spanish-tradition" role="listitem">
+              <div class="global-menu__divider" aria-hidden="true"></div>
+              <div class="global-menu__line global-menu__line--gsap" data-gsap-inline-reveal>
+                <h2 class="global-menu__word global-menu__word--left">Spanish</h2>
+                <span class="global-menu__gap global-menu__gap--gsap">
+                  <img
+                    class="global-menu__image global-menu__image--gsap"
+                    src="/assets/images/dessert.webp"
+                    alt="Spanish dish"
+                  />
+                </span>
+                <h2 class="global-menu__word global-menu__word--right">Tradition</h2>
+              </div>
+              <div class="global-menu__divider global-menu__divider--bottom" aria-hidden="true"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-component-src="assets/components/footer.html"></div>
+
+	<!-- Light/Dark Mode Toggle -->
+	<button id="theme-toggle"
+		class="fixed bottom-6 right-6 z-[1000] flex h-12 w-12 items-center justify-center rounded-full bg-clr-primary text-clr-dark shadow-[0_4px_15px_rgba(0,0,0,0.5)] transition-transform hover:scale-110"
+		aria-label="Toggle Light/Dark Mode">
+		<i class="bi bi-moon-stars-fill text-xl" id="theme-icon"></i>
+	</button>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

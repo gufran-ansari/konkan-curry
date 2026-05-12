@@ -1,0 +1,153 @@
+<!-- Off-Canvas Menu Overlay -->
+<div
+  aria-hidden="true"
+  aria-modal="true"
+  class="menu-overlay fixed inset-0 z-[100]"
+  id="menu-overlay"
+  role="dialog"
+>
+  <div class="section-shell">
+    <!-- Overlay Header -->
+    <header class="menu-overlay-header">
+      <a
+        class="brand menu-brand"
+        data-menu-link
+        href="/index.html"
+        aria-label="Konkan Curry home"
+      >
+        <img
+          class="brand-logo"
+          src="/assets/images/logo.svg"
+          alt="Konkan Curry"
+        />
+      </a>
+      <button aria-label="Close menu" class="close-btn" id="close-menu">
+        <span>Close</span>
+        <i class="bi bi-x"></i>
+      </button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="menu-overlay-main">
+      <div class="menu-nav-container">
+        <ul class="menu-nav-list">
+          <li class="menu-nav-item">
+            <a
+              class="menu-nav-link"
+              href="/index.html"
+              data-menu-link
+              data-target-image="home-preview"
+              >Home</a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a
+              class="menu-nav-link"
+              href="/about.html"
+              data-menu-link
+              data-target-image="about-preview"
+              >About</a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a
+              class="menu-nav-link"
+              href="/menu.html"
+              data-menu-link
+              data-target-image="food-preview"
+              >Menu</a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a
+              class="menu-nav-link"
+              href="/contact.html"
+              data-menu-link
+              data-target-image="contact-preview"
+              >Contact</a
+            >
+          </li>
+          <li class="menu-nav-item">
+            <a
+              class="menu-nav-link"
+              href="/location.html"
+              data-menu-link
+              data-target-image="reserve-preview"
+              >Location</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu-image-stage">
+        <div class="menu-stage-image" id="home-preview">
+          <img
+            src="/assets/images/signature-dishes.webp"
+            alt="Home Preview"
+          />
+        </div>
+        <div class="menu-stage-image" id="about-preview">
+          <img
+            src="/assets/images/about.webp"
+            alt="About Preview"
+          />
+        </div>
+        <div class="menu-stage-image" id="food-preview">
+          <img
+            src="/assets/images/veg.webp"
+            alt="Food Preview"
+          />
+        </div>
+        <div class="menu-stage-image" id="contact-preview">
+          <img
+            src="/assets/images/location.webp"
+            alt="Contact Preview"
+          />
+        </div>
+        <div class="menu-stage-image" id="reserve-preview">
+          <img
+            src="/assets/images/premium_reserve_table.webp"
+            alt="Reservations Preview"
+          />
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<!-- /Off-Canvas Menu Overlay -->
+
+<!-- Header -->
+<header
+  class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+  id="hero-header"
+>
+  <div class="shell">
+    <nav
+      class="main-nav flex items-center justify-between py-4"
+      aria-label="Primary"
+    >
+      <button
+        class="nav-hamburger text-white text-3xl"
+        id="mobile-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="menu-overlay"
+      >
+        <span class="bi bi-list"></span>
+      </button>
+      <a class="brand" href="/index.html" aria-label="Konkan Curry home">
+        <img
+          class="brand-logo"
+          src="/assets/images/logo.svg"
+          alt="Konkan Curry"
+        />
+      </a>
+      <a
+        class="outline-button hidden md:block border border-white/20 px-6 py-2 rounded-full text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all"
+        href="/index.html#reservation-form"
+        >Find A Table</a
+      >
+    </nav>
+  </div>
+</header>

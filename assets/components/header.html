@@ -1,0 +1,76 @@
+<div
+  class="kc-menu-overlay"
+  id="menu-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+>
+  <div class="kc-menu-overlay__panel">
+    <div class="kc-menu-overlay__top">
+      <a
+        class="kc-menu-overlay__brand"
+        href="index.html"
+        data-menu-link
+        aria-label="Konkan Curry home"
+      >
+        <img
+          class="kc-menu-overlay__logo"
+          src="assets/images/logo.png"
+          alt="Konkan Curry"
+          decoding="async"
+        />
+      </a>
+      <button
+        class="kc-menu-overlay__close"
+        id="close-menu"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+        <span>Close</span>
+        <span class="kc-menu-overlay__close-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="kc-menu-overlay__nav" aria-label="Menu">
+      <a href="index.html" data-menu-link>Home</a>
+      <a href="about.html" data-menu-link>About</a>
+      <a href="menu.html" data-menu-link>Menu</a>
+      <a href="contact.html" data-menu-link>Contact</a>
+      <a href="location/seawoods.html" data-menu-link>Locations</a>
+    </nav>
+  </div>
+</div>
+
+<header class="kc-header" id="hero-header">
+  <div class="kc-header__inner container-fluid d-flex justify-content-between align-items-center h-100 px-4">
+    <button
+      class="kc-header__menu"
+      id="mobile-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="menu-overlay"
+    >
+      <span class="kc-header__menu-lines" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <a
+      class="kc-header__brand"
+      href="index.html"
+      aria-label="Konkan Curry home"
+    >
+      <img
+        class="kc-header__logo"
+        src="assets/images/logo.svg"
+        alt="Konkan Curry"
+        decoding="async"
+      />
+    </a>
+
+    <a class="kc-button kc-button--primary kc-header__cta" href="contact.html">FIND A TABLE</a>
+  </div>
+</header>
