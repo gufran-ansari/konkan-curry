@@ -17,88 +17,1457 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body class="kc-body page-menu">
     <div class="kc-page-wrapper">
+      <!-- Header -->
       <div data-component-src="assets/components/header.html"></div>
 
       <main id="page-content" class="kc-page-main">
-        <section class="kc-page-hero container text-center py-5 mt-5">
-          <p class="kc-page-hero__eyebrow text-uppercase tracking-wider fw-bold text-secondary mb-2">Menu</p>
-          <h1 class="display-4 fw-bold mb-4">Coastal Indian Classics</h1>
-          <p class="lead mx-auto" style="max-width: 600px;">
-            A focused collection of dishes built for generous tables, refined
-            service, and familiar Konkan flavor.
-          </p>
+        <!-- 1. Menu Hero Section -->
+        <section class="menu-hero bg-dark">
+          <img
+            src="assets/images/Spicy_Crab_Masala_Roast.webp"
+            alt="Coastal Cuisine"
+            class="menu-hero__bg"
+          />
+          <div class="menu-hero__overlay"></div>
+
+          <img
+            src="assets/images/Tawa_Fried_Pomfret_with_Onion_Rings.webp"
+            alt="Food Element"
+            class="menu-floating-food menu-floating-food--1 rounded-circle"
+          />
+          <img
+            src="assets/images/Malai_Paneer_Tikka_Bowl.webp"
+            alt="Food Element"
+            class="menu-floating-food menu-floating-food--2 rounded-circle"
+          />
+
+          <div class="menu-hero__content container">
+            <div class="kc-hero-badge mb-3">
+              <span class="kc-hero-badge__text">Our Menu</span>
+            </div>
+            <h1 class="kc-hero-section__title text-white mb-3">
+              Crafted to Satisfy Coastal Cravings
+            </h1>
+            <nav class="kc-breadcrumb" aria-label="breadcrumb">
+              <a href="index.html">Home</a>
+              <span class="separator">/</span>
+              <span class="current" aria-current="page">Menu</span>
+            </nav>
+          </div>
         </section>
 
-        <!-- Visual Gallery Marquee -->
-        <section class="kc-visual-marquee bg-primary py-24 overflow-hidden" id="gallery-marquee">
-          <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 mb-16 lg:mb-24">
-            <div class="kc-hero-badge mb-4">
-              <span class="kc-hero-badge__text">A Glimpse of the Coast</span>
-            </div>
-            <h2 class="display-3 fw-bold text-primary mb-4">Fresh from the net, served on your plate.</h2>
-            <p class="text-secondary lead mb-0">Discover the vibrant colors and bold flavors of authentic Konkan cuisine.</p>
+        <!-- 2. Signature Dishes Spotlight -->
+        <section class="signature-spotlight py-24 md:py-32 bg-primary" id="house-specials">
+          <div class="container mb-5 text-center">
+            <span class="kc-hero-badge mb-3 d-inline-block"
+              ><span class="kc-hero-badge__text">House Specials</span></span
+            >
+            <h2
+              class="display-4 fw-bold"
+              style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+            >
+              Signature Dishes
+            </h2>
           </div>
 
-          <div class="kc-marquee__container">
-            <div class="kc-marquee__track">
-              <!-- Set 1 -->
-              <div class="kc-marquee__item">
-                <img src="assets/images/starters.webp" alt="Coastal Starters" class="kc-marquee__img">
+          <div class="spotlight-slider-container">
+            <div class="spotlight-track">
+              <!-- Slide 1 -->
+              <div class="spotlight-slide">
+                <div class="spotlight-img-wrap">
+                  <img
+                    src="assets/images/Authentic_Indian_Fish_Curry.webp"
+                    alt="Signature Crab Masala"
+                    class="spotlight-img"
+                  />
+                </div>
+                <div class="spotlight-content">
+                  <span class="menu-tag menu-tag--chef mb-3 d-inline-block"
+                    >Chef's Favorite</span
+                  >
+                  <h3
+                    class="display-4 fw-bold mb-3"
+                    style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+                  >
+                    Signature Crab Masala
+                  </h3>
+                  <p class="lead text-secondary mb-0">
+                    Freshly caught crab slow-cooked in our secret blend of roasted
+                    spices and thick coconut gravy. A true masterpiece of the
+                    coast.
+                  </p>
+                </div>
               </div>
-              <div class="kc-marquee__item">
-                <img src="assets/images/nonveg.webp" alt="Coastal Curry" class="kc-marquee__img">
+              <!-- Slide 2 -->
+              <div class="spotlight-slide">
+                <div class="spotlight-img-wrap">
+                  <img
+                    src="assets/images/Malai_Paneer_Tikka_Bowl.webp"
+                    alt="Paneer Ghee Roast"
+                    class="spotlight-img"
+                  />
+                </div>
+                <div class="spotlight-content">
+                  <span class="menu-tag menu-tag--veg mb-3 d-inline-block"
+                    >Must Try</span
+                  >
+                  <h3
+                    class="display-4 fw-bold mb-3"
+                    style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+                  >
+                    Paneer Ghee Roast
+                  </h3>
+                  <p class="lead text-secondary mb-0">
+                    Soft paneer cubes tossed in a fiery, tangy, and deeply
+                    aromatic Kundapur masala, roasted in pure homemade ghee.
+                  </p>
+                </div>
               </div>
-              <div class="kc-marquee__item">
-                <img src="assets/images/signature-dishes.webp" alt="Signature Crab Masala" class="kc-marquee__img">
+              <!-- Slide 3 -->
+              <div class="spotlight-slide">
+                <div class="spotlight-img-wrap">
+                  <img
+                    src="assets/images/Assorted_Seafood_Starters_Spread.webp"
+                    alt="Prawn Koliwada"
+                    class="spotlight-img"
+                  />
+                </div>
+                <div class="spotlight-content">
+                  <span class="menu-tag menu-tag--spicy mb-3 d-inline-block"
+                    >Spicy</span
+                  >
+                  <h3
+                    class="display-4 fw-bold mb-3"
+                    style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+                  >
+                    Prawn Koliwada
+                  </h3>
+                  <p class="lead text-secondary mb-0">
+                    Crispy, golden-fried prawns marinated in traditional Koli
+                    spices. The perfect fiery start to your coastal journey.
+                  </p>
+                </div>
               </div>
-              <div class="kc-marquee__item">
-                <img src="assets/images/veg.webp" alt="Vegetarian Coastal Selection" class="kc-marquee__img">
+              <!-- Slide 4 -->
+              <div class="spotlight-slide">
+                <div class="spotlight-img-wrap">
+                  <img
+                    src="assets/images/Crispy_Fried_Fish_Starter_Platter.webp"
+                    alt="Surmai Tawa Fry"
+                    class="spotlight-img"
+                  />
+                </div>
+                <div class="spotlight-content">
+                  <span class="menu-tag menu-tag--chef mb-3 d-inline-block"
+                    >Specialty</span
+                  >
+                  <h3
+                    class="display-4 fw-bold mb-3"
+                    style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+                  >
+                    Surmai Tawa Fry
+                  </h3>
+                  <p class="lead text-secondary mb-0">
+                    Fresh kingfish marinated in authentic Konkan red masala,
+                    seared on a cast-iron tawa for a crispy outer crust.
+                  </p>
+                </div>
               </div>
-              <div class="kc-marquee__item">
-                <img src="assets/images/celebration.webp" alt="Dining Moments" class="kc-marquee__img">
+              <!-- Slide 5 -->
+              <div class="spotlight-slide">
+                <div class="spotlight-img-wrap">
+                  <img
+                    src="assets/images/Full_Meal_Seafood_Thali.webp"
+                    alt="Konkan Special Thali"
+                    class="spotlight-img"
+                  />
+                </div>
+                <div class="spotlight-content">
+                  <span class="menu-tag menu-tag--chef mb-3 d-inline-block"
+                    >Grand Feast</span
+                  >
+                  <h3
+                    class="display-4 fw-bold mb-3"
+                    style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+                  >
+                    Konkan Special Thali
+                  </h3>
+                  <p class="lead text-secondary mb-0">
+                    A grand feast featuring fresh fish curry, crispy fry, sol
+                    kadhi, steamed rice, and authentic coastal breads.
+                  </p>
+                </div>
               </div>
-              <div class="kc-marquee__item">
-                <img src="assets/images/about.webp" alt="Culinary Heritage" class="kc-marquee__img">
+            </div>
+
+            <div class="spotlight-slider__nav d-flex justify-content-center gap-3 mt-4">
+              <button
+                type="button"
+                class="spotlight-slider__btn spotlight-slider__btn--prev"
+                aria-label="Previous slide"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
+              </button>
+              <div class="spotlight-slider__pagination d-flex gap-2"></div>
+              <button
+                type="button"
+                class="spotlight-slider__btn spotlight-slider__btn--next"
+                aria-label="Next slide"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6" /></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Location-specific Featured Menu Categories Section -->
+        <section class="py-5 bg-light border-top border-bottom">
+          <div class="container py-lg-4">
+            <div class="text-center mb-5">
+              <span class="kc-hero-badge mb-3 d-inline-block"
+                ><span class="kc-hero-badge__text">Explore Outlets</span></span
+              >
+              <h2
+                class="display-4 fw-bold mb-3"
+                style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+              >
+                Featured Menu Categories by Location
+              </h2>
+              <p
+                class="lead text-secondary mx-auto mb-4"
+                style="max-width: 700px"
+              >
+                Select a branch below to view its featured menu categories.
+              </p>
+
+              <!-- Location Tabs -->
+              <ul
+                class="nav nav-pills justify-content-center gap-2 mb-4"
+                id="locMenuTab"
+                role="tablist"
+              >
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active rounded-3 px-4 fw-bold"
+                    id="tab-kopar"
+                    data-bs-toggle="pill"
+                    data-bs-target="#content-kopar"
+                    type="button"
+                    role="tab"
+                    aria-controls="content-kopar"
+                    aria-selected="true"
+                  >
+                    Kopar Branch
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link rounded-3 px-4 fw-bold"
+                    id="tab-kharghar"
+                    data-bs-toggle="pill"
+                    data-bs-target="#content-kharghar"
+                    type="button"
+                    role="tab"
+                    aria-controls="content-kharghar"
+                    aria-selected="false"
+                  >
+                    Kharghar Branch
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link rounded-3 px-4 fw-bold"
+                    id="tab-roadpali"
+                    data-bs-toggle="pill"
+                    data-bs-target="#content-roadpali"
+                    type="button"
+                    role="tab"
+                    aria-controls="content-roadpali"
+                    aria-selected="false"
+                  >
+                    Roadpali Branch
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="locMenuTabContent">
+              <!-- Kopar Categories -->
+              <div
+                class="tab-pane fade show active"
+                id="content-kopar"
+                role="tabpanel"
+                aria-labelledby="tab-kopar"
+              >
+                <div class="row g-3 justify-content-center">
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥣</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Soups</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍢</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Starters</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🔥</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Tandoori</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🦀</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Konkan Special Seafood
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍲</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Maharashtrian Rasoi
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥘</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Indian Main Course
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">⭐</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Konkan Curry Chef’s Special
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🫓</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Indian Bread</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍚</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Rice and Pulao</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥟</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Sides and Papad</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍳</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Egg Preparations
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥛</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Raita</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍜</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Rice and Noodles
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍨</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Desserts</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍹</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Beverages</h3>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <!-- Set 2 (for loop) -->
-              <div class="kc-marquee__item">
-                <img src="assets/images/starters.webp" alt="Coastal Starters" class="kc-marquee__img">
+
+              <!-- Kharghar Categories -->
+              <div
+                class="tab-pane fade"
+                id="content-kharghar"
+                role="tabpanel"
+                aria-labelledby="tab-kharghar"
+              >
+                <div class="row g-3 justify-content-center">
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥣</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Soups</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍢</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Starters</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🔥</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Tandoori</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥢</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Chinese</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🦀</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Konkan Special Seafood
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍲</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Maharashtrian Rasoi
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥘</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Indian</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">⭐</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Konkan Curry Chef’s Special
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🫓</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Indian Bread</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍚</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Rice and Pulao</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍜</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Rice and Noodles
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍨</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Desserts</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍹</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Beverages</h3>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="kc-marquee__item">
-                <img src="assets/images/nonveg.webp" alt="Coastal Curry" class="kc-marquee__img">
+
+              <!-- Roadpali Categories -->
+              <div
+                class="tab-pane fade"
+                id="content-roadpali"
+                role="tabpanel"
+                aria-labelledby="tab-roadpali"
+              >
+                <div class="row g-3 justify-content-center">
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍹</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Mocktails</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥣</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Soups</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍢</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Starters</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥢</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Chinese</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🔥</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Tandoori</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🦀</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Konkan Special Seafood
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍗</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Chicken</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍽️</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Platters</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍲</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Maharashtrian Rasoi
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥘</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Punjabi Rasoi</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🫓</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Swadeshi Bread</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥖</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">
+                        Maharashtrian Bread
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍚</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Basmati Khazana</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🥟</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Kurkuri Side</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍨</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Desserts</h3>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div
+                      class="kc-menu-cat-card p-3 rounded-4 bg-white shadow-sm text-center border h-100 d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <div class="fs-3 mb-2 text-accent">🍹</div>
+                      <h3 class="h6 fw-bold mb-0 text-dark">Beverages</h3>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="kc-marquee__item">
-                <img src="assets/images/signature-dishes.webp" alt="Signature Crab Masala" class="kc-marquee__img">
+            </div>
+          </div>
+        </section>
+
+        <!-- 3 & 5. Interactive Menu Categories & Full Menu Grid -->
+        <section class="py-5 bg-white">
+          <div class="container">
+            <!-- Menu Content (Sequential Scroll Layout) -->
+            <div class="menu-content-wrapper">
+              <!-- Starters -->
+              <div class="menu-category-block pt-5 mb-5 pb-5 border-bottom">
+                <div class="text-center mb-5">
+                  <span class="kc-hero-badge mb-3 d-inline-block"
+                    ><span class="kc-hero-badge__text"
+                      >Begin the journey</span
+                    ></span
+                  >
+                  <h2
+                    class="display-4 fw-bold"
+                    style="
+                      font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                    "
+                  >
+                    Starters
+                  </h2>
+                </div>
+                <div class="menu-grid">
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Bombil Fry</h4>
+                      <span class="menu-item__price">₹350</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Fresh Bombay Duck coated in semolina and fried to crispy
+                      perfection.
+                    </p>
+                    <div class="menu-item__tags">
+                      <span class="menu-tag menu-tag--chef">Bestseller</span>
+                    </div>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Surmai Tawa Fry</h4>
+                      <span class="menu-item__price">₹480</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Kingfish slice marinated in fiery red chili paste and
+                      pan-fried.
+                    </p>
+                    <div class="menu-item__tags">
+                      <span class="menu-tag menu-tag--spicy">Spicy</span>
+                    </div>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Chicken Sukka</h4>
+                      <span class="menu-item__price">₹320</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Tender chicken pieces dry roasted with grated coconut and
+                      whole spices.
+                    </p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Mushroom Pepper Fry</h4>
+                      <span class="menu-item__price">₹280</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Button mushrooms tossed with crushed black pepper and
+                      curry leaves.
+                    </p>
+                    <div class="menu-item__tags">
+                      <span class="menu-tag menu-tag--veg">Veg</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="kc-marquee__item">
-                <img src="assets/images/veg.webp" alt="Vegetarian Coastal Selection" class="kc-marquee__img">
+
+              <!-- Seafood -->
+              <div class="menu-category-block pt-5 mb-5 pb-5 border-bottom">
+                <div class="text-center mb-5">
+                  <span class="kc-hero-badge mb-3 d-inline-block"
+                    ><span class="kc-hero-badge__text">Fresh Catch</span></span
+                  >
+                  <h2
+                    class="display-4 fw-bold"
+                    style="
+                      font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                    "
+                  >
+                    Seafood Masterpieces
+                  </h2>
+                </div>
+                <div class="menu-grid">
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Mangalorean Fish Curry</h4>
+                      <span class="menu-item__price">₹450</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Tangy and spicy coconut-based curry with your choice of
+                      catch.
+                    </p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Prawns Pulimunchi</h4>
+                      <span class="menu-item__price">₹520</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      A fiery and sour delicacy made with tamarind and roasted
+                      dry chilies.
+                    </p>
+                    <div class="menu-item__tags">
+                      <span class="menu-tag menu-tag--spicy">Spicy</span>
+                    </div>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Crab Butter Garlic</h4>
+                      <span class="menu-item__price">₹650</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Whole mud crab tossed in a rich, garlicky butter sauce.
+                    </p>
+                    <div class="menu-item__tags">
+                      <span class="menu-tag menu-tag--chef">Chef's Pick</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="kc-marquee__item">
-                <img src="assets/images/celebration.webp" alt="Dining Moments" class="kc-marquee__img">
+
+              <!-- Curries -->
+              <div class="menu-category-block pt-5 mb-5 pb-5 border-bottom">
+                <div class="text-center mb-5">
+                  <span class="kc-hero-badge mb-3 d-inline-block"
+                    ><span class="kc-hero-badge__text">Heart & Soul</span></span
+                  >
+                  <h2
+                    class="display-4 fw-bold"
+                    style="
+                      font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                    "
+                  >
+                    Coastal Curries
+                  </h2>
+                </div>
+                <div class="menu-grid">
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Mutton Rogan Josh</h4>
+                      <span class="menu-item__price">₹550</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Classic slow-cooked lamb curry with intense flavors.
+                    </p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Chicken Gassi</h4>
+                      <span class="menu-item__price">₹380</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Traditional coastal chicken curry with coconut milk and
+                      roasted coriander.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="kc-marquee__item">
-                <img src="assets/images/about.webp" alt="Culinary Heritage" class="kc-marquee__img">
+
+              <!-- Vegetarian -->
+              <div class="menu-category-block pt-5 mb-5 pb-5 border-bottom">
+                <div class="text-center mb-5">
+                  <span class="kc-hero-badge mb-3 d-inline-block"
+                    ><span class="kc-hero-badge__text"
+                      >Earth's Bounty</span
+                    ></span
+                  >
+                  <h2
+                    class="display-4 fw-bold"
+                    style="
+                      font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                    "
+                  >
+                    Vegetarian Classics
+                  </h2>
+                </div>
+                <div class="menu-grid">
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Veg Stew</h4>
+                      <span class="menu-item__price">₹280</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Mild and fragrant coconut milk stew with seasonal
+                      vegetables.
+                    </p>
+                    <div class="menu-item__tags">
+                      <span class="menu-tag menu-tag--veg">Veg</span>
+                    </div>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Dal Fry</h4>
+                      <span class="menu-item__price">₹220</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Yellow lentils tempered with ghee, cumin, and garlic.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Desserts -->
+              <div class="menu-category-block pt-5 mb-5 pb-5">
+                <div class="text-center mb-5">
+                  <span class="kc-hero-badge mb-3 d-inline-block"
+                    ><span class="kc-hero-badge__text"
+                      >Sweet Endings</span
+                    ></span
+                  >
+                  <h2
+                    class="display-4 fw-bold"
+                    style="
+                      font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                    "
+                  >
+                    Desserts
+                  </h2>
+                </div>
+                <div class="menu-grid">
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Sizzling Brownie</h4>
+                      <span class="menu-item__price">₹250</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Warm chocolate brownie topped with vanilla ice cream on a
+                      hot plate.
+                    </p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item__header">
+                      <h4 class="menu-item__title">Caramel Custard</h4>
+                      <span class="menu-item__price">₹180</span>
+                    </div>
+                    <p class="menu-item__desc">
+                      Silky smooth baked custard with a bitter-sweet caramel
+                      glaze.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Featured Dish Story Section -->
+        <section class="featured-story">
+          <div
+            class="featured-story__bg"
+            style="
+              background-image: url(&quot;assets/images/interior-1.webp&quot;);
+            "
+          ></div>
+          <div class="featured-story__overlay"></div>
+          <div class="container featured-story__content">
+            <div class="row align-items-center">
+              <div class="col-lg-5 mb-5 mb-lg-0 text-center">
+                <img
+                  src="assets/images/Spicy_Crab_Masala_Roast.webp"
+                  alt="Signature Creation"
+                  class="img-fluid rounded-circle shadow-lg"
+                  style="
+                    border: 10px solid rgba(255, 255, 255, 0.1);
+                    max-width: 400px;
+                  "
+                />
+              </div>
+              <div class="col-lg-7 ps-lg-5 text-center text-lg-start">
+                <div class="kc-hero-badge mb-3">
+                  <span class="kc-hero-badge__text">Signature Creation</span>
+                </div>
+                <h2
+                  class="display-3 fw-bold text-white mb-4"
+                  style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+                >
+                  The Royal Thali
+                </h2>
+                <p
+                  class="lead text-white mb-4"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                >
+                  A grand feast on a single platter. Experience a symphony of
+                  flavors featuring our best curries, dry roasts, fresh breads,
+                  and traditional accompaniments.
+                </p>
+                <p class="mb-5" style="color: rgba(255, 255, 255, 0.6)">
+                  Flavor notes: Balanced, aromatic, with bursts of tangy
+                  tamarind and rich coconut.
+                </p>
+                <a href="contact.html" class="kc-button kc-button--primary"
+                  >Reserve to Taste</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Chef Recommendations -->
+        <section
+          class="py-5 bg-light chef-recommendations"
+          style="padding-top: 6rem !important; padding-bottom: 6rem !important"
+        >
+          <div class="container">
+            <div
+              class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 pb-2"
+            >
+              <div class="text-md-start text-center mb-4 mb-md-0">
+                <span class="kc-hero-badge mb-3 d-inline-block"
+                  ><span class="kc-hero-badge__text"
+                    >Curated For You</span
+                  ></span
+                >
+                <h2
+                  class="display-4 fw-bold mb-0"
+                  style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+                >
+                  Chef's Recommendations
+                </h2>
+              </div>
+              <div class="d-flex gap-3 justify-content-center">
+                <button
+                  class="btn rounded-circle bg-white shadow-sm border-0 d-flex align-items-center justify-content-center"
+                  id="chef-prev"
+                  style="width: 48px; height: 48px; color: var(--clr-primary)"
+                  aria-label="Previous"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </button>
+                <button
+                  class="btn rounded-circle bg-white shadow-sm border-0 d-flex align-items-center justify-content-center"
+                  id="chef-next"
+                  style="width: 48px; height: 48px; color: var(--clr-primary)"
+                  aria-label="Next"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="chef-slider-container"
+              id="chefSlider"
+              style="
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                scroll-behavior: smooth;
+              "
+            >
+              <div class="d-flex gap-4 pb-4" style="min-width: max-content">
+                <!-- Card 1: Surmai Tawa Fry -->
+                <div
+                  class="chef-slider-item"
+                  style="
+                    scroll-snap-align: start;
+                    width: 85vw;
+                    max-width: 380px;
+                  "
+                >
+                  <div class="chef-rec-card d-flex flex-column h-100">
+                    <div class="chef-rec-img-wrap">
+                      <img
+                        src="assets/images/Surmai_Fish_Fry_Golden_Tray.webp"
+                        class="chef-rec-img"
+                        alt="Surmai Tawa Fry"
+                      />
+                      <span
+                        class="position-absolute top-0 end-0 m-3 menu-tag menu-tag--chef"
+                        >Bestseller</span
+                      >
+                    </div>
+                    <div class="p-4 flex-grow-1">
+                      <h4
+                        class="fw-bold mb-3"
+                        style="
+                          font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                        "
+                      >
+                        Surmai Tawa Fry
+                      </h4>
+                      <p class="chef-quote">
+                        "Fresh kingfish marinated in authentic Konkan red masala, seared to golden perfection on a hot tawa."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2: Spicy Crab Masala Roast -->
+                <div
+                  class="chef-slider-item"
+                  style="
+                    scroll-snap-align: start;
+                    width: 85vw;
+                    max-width: 380px;
+                  "
+                >
+                  <div class="chef-rec-card d-flex flex-column h-100">
+                    <div class="chef-rec-img-wrap">
+                      <img
+                        src="assets/images/Spicy_Crab_Masala_Roast.webp"
+                        class="chef-rec-img"
+                        alt="Spicy Crab Masala Roast"
+                      />
+                      <span
+                        class="position-absolute top-0 end-0 m-3 menu-tag menu-tag--chef"
+                        >Chef's Pick</span
+                      >
+                    </div>
+                    <div class="p-4 flex-grow-1">
+                      <h4
+                        class="fw-bold mb-3"
+                        style="
+                          font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                        "
+                      >
+                        Spicy Crab Masala Roast
+                      </h4>
+                      <p class="chef-quote">
+                        "Fresh crab slow-cooked in our signature blend of hand-ground coastal spices and roasted coconut gravy."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 3: Mutton Sukka -->
+                <div
+                  class="chef-slider-item"
+                  style="
+                    scroll-snap-align: start;
+                    width: 85vw;
+                    max-width: 380px;
+                  "
+                >
+                  <div class="chef-rec-card d-flex flex-column h-100">
+                    <div class="chef-rec-img-wrap">
+                      <img
+                        src="assets/images/Restaurant_Special_Mutton_Sukka.webp"
+                        class="chef-rec-img"
+                        alt="Mutton Sukka"
+                      />
+                      <span
+                        class="position-absolute top-0 end-0 m-3 menu-tag menu-tag--spicy"
+                        >Must Try</span
+                      >
+                    </div>
+                    <div class="p-4 flex-grow-1">
+                      <h4
+                        class="fw-bold mb-3"
+                        style="
+                          font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                        "
+                      >
+                        Mutton Sukka
+                      </h4>
+                      <p class="chef-quote">
+                        "Slow-roasted mutton tossed with toasted coastal spices, caramelized onions, and fresh coconut."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 4: Pomfret Tawa Fry -->
+                <div
+                  class="chef-slider-item"
+                  style="
+                    scroll-snap-align: start;
+                    width: 85vw;
+                    max-width: 380px;
+                  "
+                >
+                  <div class="chef-rec-card d-flex flex-column h-100">
+                    <div class="chef-rec-img-wrap">
+                      <img
+                        src="assets/images/Tawa_Fried_Pomfret_with_Onion_Rings.webp"
+                        class="chef-rec-img"
+                        alt="Pomfret Tawa Fry"
+                      />
+                      <span
+                        class="position-absolute top-0 end-0 m-3 menu-tag menu-tag--chef"
+                        >Specialty</span
+                      >
+                    </div>
+                    <div class="p-4 flex-grow-1">
+                      <h4
+                        class="fw-bold mb-3"
+                        style="
+                          font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                        "
+                      >
+                        Pomfret Tawa Fry
+                      </h4>
+                      <p class="chef-quote">
+                        "Whole pomfret coated in spicy semolina crust, seared on a cast-iron tawa for an exquisite crisp."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 5: Authentic Konkan Fish Curry -->
+                <div
+                  class="chef-slider-item"
+                  style="
+                    scroll-snap-align: start;
+                    width: 85vw;
+                    max-width: 380px;
+                  "
+                >
+                  <div class="chef-rec-card d-flex flex-column h-100">
+                    <div class="chef-rec-img-wrap">
+                      <img
+                        src="assets/images/Authentic_Indian_Fish_Curry.webp"
+                        class="chef-rec-img"
+                        alt="Authentic Konkan Fish Curry"
+                      />
+                      <span
+                        class="position-absolute top-0 end-0 m-3 menu-tag menu-tag--chef"
+                        >Signature</span
+                      >
+                    </div>
+                    <div class="p-4 flex-grow-1">
+                      <h4
+                        class="fw-bold mb-3"
+                        style="
+                          font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                        "
+                      >
+                        Authentic Konkan Fish Curry
+                      </h4>
+                      <p class="chef-quote">
+                        "Traditional coastal fish curry simmered with fresh coconut milk, fiery red chillies, and kokum."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 6: Paneer Ghee Roast -->
+                <div
+                  class="chef-slider-item"
+                  style="
+                    scroll-snap-align: start;
+                    width: 85vw;
+                    max-width: 380px;
+                  "
+                >
+                  <div class="chef-rec-card d-flex flex-column h-100">
+                    <div class="chef-rec-img-wrap">
+                      <img
+                        src="assets/images/Malai_Paneer_Tikka_Bowl.webp"
+                        class="chef-rec-img"
+                        alt="Paneer Ghee Roast"
+                      />
+                      <span
+                        class="position-absolute top-0 end-0 m-3 menu-tag menu-tag--veg"
+                        >Veg Special</span
+                      >
+                    </div>
+                    <div class="p-4 flex-grow-1">
+                      <h4
+                        class="fw-bold mb-3"
+                        style="
+                          font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                        "
+                      >
+                        Paneer Ghee Roast
+                      </h4>
+                      <p class="chef-quote">
+                        "Soft cottage cheese cubes tossed in aromatic Mangalorean Kundapur spices and pure homemade ghee."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 7: Classic Solkadi -->
+                <div
+                  class="chef-slider-item"
+                  style="
+                    scroll-snap-align: start;
+                    width: 85vw;
+                    max-width: 380px;
+                  "
+                >
+                  <div class="chef-rec-card d-flex flex-column h-100">
+                    <div class="chef-rec-img-wrap">
+                      <img
+                        src="assets/images/Mocktail.webp"
+                        class="chef-rec-img"
+                        alt="Classic Solkadi & Refreshers"
+                      />
+                      <span
+                        class="position-absolute top-0 end-0 m-3 menu-tag"
+                        style="
+                          background: #e8f5e9;
+                          color: #2e7d32;
+                          padding: 0.4rem 1rem;
+                          border-radius: 50px;
+                          font-weight: 600;
+                          font-size: 0.8rem;
+                          letter-spacing: 0.5px;
+                          text-transform: uppercase;
+                        "
+                        >Refreshing</span
+                      >
+                    </div>
+                    <div class="p-4 flex-grow-1">
+                      <h4
+                        class="fw-bold mb-3"
+                        style="
+                          font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                        "
+                      >
+                        Classic Solkadi & Refreshers
+                      </h4>
+                      <p class="chef-quote">
+                        "A soul-soothing coastal digestive drink crafted with fresh coconut milk, tangy kokum, and green chillies."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <style>
+              .chef-slider-container::-webkit-scrollbar {
+                display: none;
+              }
+              #chef-prev:hover,
+              #chef-next:hover {
+                background: var(--clr-primary) !important;
+                color: white !important;
+                transition: all 0.3s ease;
+              }
+            </style>
+          </div>
+        </section>
+
+        <!-- 7. Food Gallery Marquee -->
+        <section class="menu-gallery-marquee">
+          <div class="menu-marquee-track">
+            <div class="menu-marquee-item">
+              <img src="assets/images/Aromatic_Fish_Biryani_Bowl.webp" alt="Food" />
+            </div>
+            <div class="menu-marquee-item">
+              <img src="assets/images/Authentic_Indian_Fish_Curry.webp" alt="Food" />
+            </div>
+            <div class="menu-marquee-item">
+              <img
+                src="assets/images/Malai_Paneer_Tikka_Bowl.webp"
+                alt="Food"
+              />
+            </div>
+            <div class="menu-marquee-item">
+              <img
+                src="assets/images/Authentic_Indian_Fish_Curry.webp"
+                alt="Food"
+              />
+            </div>
+            <div class="menu-marquee-item">
+              <img
+                src="assets/images/Spicy_Crab_Masala_Roast.webp"
+                alt="Food"
+              />
+            </div>
+            <div class="menu-marquee-item">
+              <img
+                src="assets/images/Tawa_Fried_Pomfret_with_Onion_Rings.webp"
+                alt="Food"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. Reservation and Order CTA Section -->
+        <section
+          class="cta-parallax position-relative overflow-hidden"
+          style="
+            background-image: url(&quot;assets/images/interior-15.webp&quot;);
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+          "
+        >
+          <div
+            class="position-absolute inset-0 z-0"
+            style="background: rgba(0, 0, 0, 0.75)"
+          ></div>
+          <div class="container position-relative z-1 text-center">
+            <div class="mx-auto" data-reveal style="max-width: 700px">
+              <div class="kc-hero-badge mb-3">
+                <span class="kc-hero-badge__text">Ready to Indulge?</span>
+              </div>
+              <h2
+                class="display-3 fw-bold text-white mb-4"
+                style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+              >
+                Reserve Your Table
+              </h2>
+              <p
+                class="lead text-white mb-5"
+                style="color: rgba(255, 255, 255, 0.8)"
+              >
+                Join us for an unforgettable coastal dining experience, or get in touch with our team.
+              </p>
+              <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="#reservationModal" class="kc-button kc-button--primary openReserveModalBtn"
+                  >Reserve a Table</a
+                >
+                <a
+                  href="contact.html"
+                  class="kc-button kc-button--secondary text-white"
+                  style="border-color: rgba(255, 255, 255, 0.4)"
+                  >Contact Us</a
+                >
               </div>
             </div>
           </div>
         </section>
       </main>
 
+      <!-- Footer -->
       <div data-component-src="assets/components/footer.html"></div>
+      <!-- Dynamic Popup Component -->
+      <div data-component-src="assets/components/popup.html"></div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

@@ -21,7 +21,14 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
@@ -35,18 +42,60 @@
           id="home"
           aria-label="Konkan Curry Hero"
         >
-          <!-- Video Background -->
-          <div class="kc-hero-bg-wrapper">
-            <video
-              class="kc-hero-section__video"
-              autoplay
-              loop
-              muted
-              playsinline
-            >
-              <source src="assets/video/hero.mp4" type="video/mp4" />
-            </video>
-            <div class="kc-hero-section__overlay"></div>
+          <!-- Image Slider Background -->
+          <div class="kc-hero-slider">
+            <div class="kc-hero-slide active">
+              <img
+                src="assets/images/kharghar_interior_1.webp"
+                alt="Konkan Curry Grand Dining Room"
+                class="kc-hero-slide__img"
+              />
+              <div class="kc-hero-slide__overlay"></div>
+            </div>
+            <div class="kc-hero-slide">
+              <img
+                src="assets/images/Full_Course_Meal_Display_with_Branding.webp"
+                alt="Coastal Banquet Spread"
+                class="kc-hero-slide__img"
+              />
+              <div class="kc-hero-slide__overlay"></div>
+            </div>
+            <div class="kc-hero-slide">
+              <img
+                src="assets/images/roadpali_interior_1.webp"
+                alt="Warm Coastal Ambiance"
+                class="kc-hero-slide__img"
+              />
+              <div class="kc-hero-slide__overlay"></div>
+            </div>
+            <div class="kc-hero-slide">
+              <img
+                src="assets/images/interior-13.webp"
+                alt="Signature Dining Experience"
+                class="kc-hero-slide__img"
+              />
+              <div class="kc-hero-slide__overlay"></div>
+            </div>
+            <div class="kc-hero-slide">
+              <img
+                src="assets/images/interior-11.webp"
+                alt="Premium Seafood Dining"
+                class="kc-hero-slide__img"
+              />
+              <div class="kc-hero-slide__overlay"></div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div class="kc-hero-slider__nav">
+              <button
+                class="kc-hero-slider__dot active"
+                aria-label="Slide 1"
+              ></button>
+              <button class="kc-hero-slider__dot" aria-label="Slide 2"></button>
+              <button class="kc-hero-slider__dot" aria-label="Slide 3"></button>
+              <button class="kc-hero-slider__dot" aria-label="Slide 4"></button>
+              <button class="kc-hero-slider__dot" aria-label="Slide 5"></button>
+            </div>
           </div>
 
           <!-- Content -->
@@ -72,10 +121,15 @@
               <div
                 class="kc-hero-section__actions d-flex gap-4 justify-content-center flex-wrap"
               >
-                <a class="kc-button kc-button--primary text-white" href="contact.html"
-                  >Reserve a Table</a
+                <button
+                  type="button"
+                  class="kc-button kc-button--primary text-white border-0 openReserveModalBtn"
                 >
-                <a class="kc-button kc-button--secondary text-white border-white/40 hover:border-transparent" href="menu.html"
+                  Reserve a Table
+                </button>
+                <a
+                  class="kc-button kc-button--secondary text-white border-white/40 hover:border-transparent"
+                  href="menu.html"
                   >View Menu</a
                 >
               </div>
@@ -90,35 +144,57 @@
         </section>
 
         <!-- Intro Story Section -->
-        <section class="kc-intro-story bg-primary py-12 sm:py-16 overflow-hidden" id="intro-story">
-          <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <!-- Header -->
-            <div class="text-center mb-8 lg:mb-24 reveal-story-header">
-             <div class="kc-hero-badge mb-4">
-              <span class="kc-hero-badge__text">Who We Are</span>
-            </div> 
-              <h2 class="display-3 fw-bold text-primary max-w-4xl mx-auto leading-tight">
-                Bringing the Heart of <br> <span class="brand-name">Konkan</span> to Navi Mumbai
-              </h2>
-            </div>
-
+        <section
+          class="kc-intro-story bg-primary py-12 sm:py-16 overflow-hidden"
+          id="intro-story"
+        >
+          <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
             <!-- Content Grid -->
-            <div class="row g-5 my-0 align-items-center justify-content-center reveal-story-content">
-              <div class="col-12 col-md-5 col-lg-4 text-center">
+            <div
+              class="row g-8 gx-lg-8 my-0 align-items-center justify-content-center reveal-story-content"
+            >
+              <div class="col-12 col-md-6 col-lg-6 text-center">
                 <div class="kc-story__pattern-wrap">
-                  <img src="assets/images/story-pattern.webp" class="kc-story__pattern-img w-full h-auto max-w-[360px] mx-auto" alt="Konkan Pattern">
+                  <img
+                    src="assets/images/about.webp"
+                    class="kc-story__pattern-img story-about-img img-fluid"
+                    alt="Who We Are - Konkan Curry"
+                  />
                 </div>
               </div>
-              <div class="col-12 col-md-7 col-lg-6">
-                <div class="kc-story__text space-y-8">
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="kc-story__text space-y-4">
+                  <!-- Header -->
+                  <div class="text-left reveal-story-header">
+                    <div class="kc-hero-badge mb-1">
+                      <span class="kc-hero-badge__text">Who We Are</span>
+                    </div>
+                    <h2
+                      class="display-3 fw-bold text-primary max-w-4xl mx-auto leading-tight"
+                    >
+                      Bringing the Heart of <br />
+                      <span class="brand-name">Konkan</span> to Navi Mumbai
+                    </h2>
+                  </div>
+
                   <p class="text-secondary lead font-light leading-relaxed">
-                    At Konkan Curry, we bring the soulful flavours of North India and the West Coast straight to Navi Mumbai. Imagine the smoky aroma of fresh-caught delicacies, the richness of hand-ground masalas, and the comfort of homestyle coastal meals—all on your plate.
+                    At Konkan Curry, we bring the soulful flavours of North
+                    India and the West Coast straight to Navi Mumbai. Imagine
+                    the smoky aroma of fresh-caught delicacies, the richness of
+                    hand-ground masalas, and the comfort of homestyle coastal
+                    meals all on your plate.
                   </p>
                   <p class="text-secondary lead font-light leading-relaxed">
-                    Our menu is a tribute to legendary coastal food culture, enhanced with a modern dining twist. Whether you’re planning a family gathering or an indulgent weekend feast, Konkan Curry promises a culinary experience that’s as vibrant and flavourful as the shores themselves.
+                    Our menu is a tribute to legendary coastal food culture,
+                    enhanced with a modern dining twist. Whether you’re planning
+                    a family gathering or an indulgent weekend feast, Konkan
+                    Curry promises a culinary experience that’s as vibrant and
+                    flavourful as the shores themselves.
                   </p>
-                  <div class="pt-4">
-                    <a href="about.html" class="kc-button kc-button--secondary">About Us</a>
+                  <div class="pt-2">
+                    <a href="about.html" class="kc-button kc-button--primary"
+                      >About Us</a
+                    >
                   </div>
                 </div>
               </div>
@@ -127,21 +203,105 @@
 
           <!-- Icon Marquee -->
           <div class="kc-icon-marquee mt-12 sm:mt-16">
-            <div class="kc-icon-marquee__track"> 
+            <div class="kc-icon-marquee__track">
               <!-- Set 1 -->
-              <div class="kc-icon-marquee__item"><img src="assets/images/veg.webp" alt="Icon"></div>
-              <div class="kc-icon-marquee__item"><img src="assets/images/nonveg.webp" alt="Icon"></div>
-              <div class="kc-icon-marquee__item"><img src="assets/images/starters.webp" alt="Icon"></div>
-              <div class="kc-icon-marquee__item"><img src="assets/images/signature-dishes.webp" alt="Icon"></div>
-              <div class="kc-icon-marquee__item"><img src="assets/images/dessert.webp" alt="Icon"></div>
-              <div class="kc-icon-marquee__item"><img src="assets/images/beverages.webp" alt="Icon"></div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/Malai_Paneer_Tikka_Bowl.webp"
+                  alt="Paneer Tikka"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/Authentic_Indian_Fish_Curry.webp"
+                  alt="Fish Curry"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/Crispy_Fried_Fish_Starter_Platter.webp"
+                  alt="Fried Fish Platter"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/Spicy_Crab_Masala_Roast.webp"
+                  alt="Crab Masala"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/kharghar_food_1.webp"
+                  alt="Kharghar Special"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/Tawa_Fried_Fish_Slices_on_Banana_Leaf.webp"
+                  alt="Banana Leaf Fry"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/roadpali_food_2.webp"
+                  alt="Roadpali Special"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/kharghar_interior_2.webp"
+                  alt="Interior Vibe"
+                />
+              </div>
               <!-- Set 2 -->
-              <div class="kc-icon-marquee__item"><img src="assets/images/veg.webp" alt="Icon"></div>
-              <div class="kc-icon-marquee__item"><img src="assets/images/nonveg.webp" alt="Icon"></div>
-              <div class="kc-icon-marquee__item"><img src="assets/images/starters.webp" alt="Icon"></div>
-              <div class="kc-icon-marquee__item"><img src="assets/images/signature-dishes.webp" alt="Icon"></div>
-              <div class="kc-icon-marquee__item"><img src="assets/images/dessert.webp" alt="Icon"></div>
-              <div class="kc-icon-marquee__item"><img src="assets/images/beverages.webp" alt="Icon"></div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/Malai_Paneer_Tikka_Bowl.webp"
+                  alt="Paneer Tikka"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/Authentic_Indian_Fish_Curry.webp"
+                  alt="Fish Curry"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/Crispy_Fried_Fish_Starter_Platter.webp"
+                  alt="Fried Fish Platter"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/Spicy_Crab_Masala_Roast.webp"
+                  alt="Crab Masala"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/kharghar_food_1.webp"
+                  alt="Kharghar Special"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/Tawa_Fried_Fish_Slices_on_Banana_Leaf.webp"
+                  alt="Banana Leaf Fry"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/roadpali_food_2.webp"
+                  alt="Roadpali Special"
+                />
+              </div>
+              <div class="kc-icon-marquee__item">
+                <img
+                  src="assets/images/kharghar_interior_2.webp"
+                  alt="Interior Vibe"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -152,34 +312,87 @@
               <div class="kc-hero-badge mb-4">
                 <span class="kc-hero-badge__text">Visual Narratives</span>
               </div>
-              <h2 class="display-3 fw-bold text-white mb-4">A Glimpse of the Coast</h2>
+              <h2 class="display-3 fw-bold text-white mb-4">
+                A Glimpse of the Coast
+              </h2>
               <p class="text-white/60 lead mb-0 max-w-2xl">
-                Immerse yourself in the vibrant colors and authentic moments that define the Konkan Curry experience. Every frame captures a story of heritage, flavor, and culinary craft.
+                Immerse yourself in the vibrant colors and authentic moments
+                that define the Konkan Curry experience. Every frame captures a
+                story of heritage, flavor, and culinary craft.
               </p>
             </div>
           </div>
           <div class="kc-curvy-gallery__container">
             <div class="kc-curvy-gallery__track">
               <div class="kc-curvy-gallery__item">
-                <img src="assets/images/starters.webp" alt="Coastal Starters" class="kc-curvy-gallery__img">
+                <img
+                  src="assets/images/Assorted_Seafood_Starters_Spread.webp"
+                  alt="Coastal Starters"
+                  class="kc-curvy-gallery__img"
+                />
               </div>
               <div class="kc-curvy-gallery__item">
-                <img src="assets/images/nonveg.webp" alt="Coastal Curry" class="kc-curvy-gallery__img">
+                <img
+                  src="assets/images/Authentic_Indian_Fish_Curry.webp"
+                  alt="Coastal Curry"
+                  class="kc-curvy-gallery__img"
+                />
               </div>
               <div class="kc-curvy-gallery__item">
-                <img src="assets/images/signature-dishes.webp" alt="Signature Crab" class="kc-curvy-gallery__img">
+                <img
+                  src="assets/images/Crispy_Fried_Fish_Starter_Platter.webp"
+                  alt="Golden Fish Fry"
+                  class="kc-curvy-gallery__img"
+                />
               </div>
               <div class="kc-curvy-gallery__item">
-                <img src="assets/images/veg.webp" alt="Vegetarian Selections" class="kc-curvy-gallery__img">
+                <img
+                  src="assets/images/Spicy_Crab_Masala_Roast.webp"
+                  alt="Signature Crab"
+                  class="kc-curvy-gallery__img"
+                />
               </div>
               <div class="kc-curvy-gallery__item">
-                <img src="assets/images/about.webp" alt="Kitchen Moments" class="kc-curvy-gallery__img">
+                <img
+                  src="assets/images/kharghar_food_1.webp"
+                  alt="Kharghar Feast"
+                  class="kc-curvy-gallery__img"
+                />
               </div>
               <div class="kc-curvy-gallery__item">
-                <img src="assets/images/celebration.webp" alt="Dining Vibe" class="kc-curvy-gallery__img">
+                <img
+                  src="assets/images/Whole_Grilled_Fish_Platter.webp"
+                  alt="Whole Grilled Fish"
+                  class="kc-curvy-gallery__img"
+                />
               </div>
               <div class="kc-curvy-gallery__item">
-                <img src="assets/images/hero-bg.webp" alt="Hero Dish" class="kc-curvy-gallery__img">
+                <img
+                  src="assets/images/roadpali_food_3.webp"
+                  alt="Roadpali Special Thali"
+                  class="kc-curvy-gallery__img"
+                />
+              </div>
+              <div class="kc-curvy-gallery__item">
+                <img
+                  src="assets/images/Tawa_Fried_Fish_Slices_on_Banana_Leaf.webp"
+                  alt="Tawa Fish Fry"
+                  class="kc-curvy-gallery__img"
+                />
+              </div>
+              <div class="kc-curvy-gallery__item">
+                <img
+                  src="assets/images/kharghar_interior_1.webp"
+                  alt="Kharghar Grand Interior"
+                  class="kc-curvy-gallery__img"
+                />
+              </div>
+              <div class="kc-curvy-gallery__item">
+                <img
+                  src="assets/images/Full_Meal_Seafood_Thali.webp"
+                  alt="Full Seafood Thali"
+                  class="kc-curvy-gallery__img"
+                />
               </div>
             </div>
           </div>
@@ -192,7 +405,7 @@
               <div class="kc-showcase__slide kc-showcase__slide--1">
                 <div class="kc-showcase__visual">
                   <div class="kc-showcase__img-wrapper">
-                    <img src="assets/images/starters.webp" alt="Pomfret Fry" class="kc-showcase__img" loading="lazy">
+                    <img src="assets/images/Assorted_Seafood_Starters_Spread.webp" alt="Pomfret Fry" class="kc-showcase__img" loading="lazy">
                   </div>
                 </div>
                 <div class="kc-showcase__content text-md-end">
@@ -204,7 +417,7 @@
               <div class="kc-showcase__slide kc-showcase__slide--2 flex-md-row-reverse">
                 <div class="kc-showcase__visual">
                   <div class="kc-showcase__img-wrapper">
-                    <img src="assets/images/nonveg.webp" alt="Prawn Gassi" class="kc-showcase__img" loading="lazy">
+                    <img src="assets/images/Authentic_Indian_Fish_Curry.webp" alt="Prawn Gassi" class="kc-showcase__img" loading="lazy">
                   </div>
                 </div>
                 <div class="kc-showcase__content text-md-start">
@@ -216,7 +429,7 @@
               <div class="kc-showcase__slide kc-showcase__slide--3">
                 <div class="kc-showcase__visual">
                   <div class="kc-showcase__img-wrapper">
-                    <img src="assets/images/signature-dishes.webp" alt="Crab Masala" class="kc-showcase__img" loading="lazy">
+                    <img src="assets/images/Spicy_Crab_Masala_Roast.webp" alt="Crab Masala" class="kc-showcase__img" loading="lazy">
                   </div>
                 </div>
                 <div class="kc-showcase__content text-md-end">
@@ -237,98 +450,142 @@
         -->
 
         <!-- Featured Programs - GSAP Reveal Sections -->
-        <section class="tp-project-3-area" style="background-color: #173826;">
+        <section class="tp-project-3-area" style="background-color: #173826">
           <div class="tp-project-header">
             <h2>Signature Creations</h2>
             <p>Crafted with precision, inspired by the coast.</p>
           </div>
-             <div class="tp-project-3-wrap">
-                <div class="tp-project-reveal-inner">
-                   <!-- Center Content -->
-                   <div class="tp-project-center-content">
-                      <div class="center-img-wrap">
-                         <img src="assets/card/dilli-assets-14.png" alt="">
-                      </div>
-                      <div class="text-white text-center">
-                        <h3 class="tp-reveal-title">Konkan Curry</h3>
-                        <p class="tp-reveal-sub">Juicy, char-grilled, and full of flavour</p>
-                      </div>
-                   </div>
-                   <!-- Curtain Cards -->
-                   <div class="tp-project-side-card pro-img-1">
-                      <img src="assets/card/specials-1.jpg" alt="">
-                   </div>
-                   <div class="tp-project-side-card pro-img-2">
-                      <img src="assets/card/specials-2.jpg" alt="">
-                   </div>
+          <div class="tp-project-3-wrap">
+            <div class="tp-project-reveal-inner">
+              <!-- Center Content -->
+              <div class="tp-project-center-content">
+                <div class="center-img-wrap">
+                  <img
+                    src="assets/images/Starters_and_MainCourse_Overview.webp"
+                    alt="Starters_and_MainCourse_Overview"
+                  />
                 </div>
-             </div>
+                <div class="text-white text-center">
+                  <h3 class="tp-reveal-title">Perfect Starters</h3>
+                  <p class="tp-reveal-sub">
+                    Juicy, char-grilled, and full of flavour
+                  </p>
+                </div>
+              </div>
+              <!-- Curtain Cards -->
+              <div class="tp-project-side-card pro-img-1">
+                <img
+                  src="assets/images/Assorted_Seafood_Starters_Spread.webp"
+                  alt="Assorted_Seafood_Starters_Spread"
+                />
+              </div>
+              <div class="tp-project-side-card pro-img-2">
+                <img
+                  src="assets/images/roadpali_food_3.webp"
+                  alt="roadpali_food_3"
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section class="tp-project-3-area" style="background-color: #173826;">
-             <div class="tp-project-3-wrap">
-                <div class="tp-project-reveal-inner">
-                   <div class="tp-project-center-content">
-                      <div class="center-img-wrap">
-                         <img src="assets/card/basmati-khazana-removebg-preview.png" alt="">
-                      </div>
-                      <div class="text-white text-center">
-                        <h3 class="tp-reveal-title">Basmati Khazana</h3>
-                        <p class="tp-reveal-sub">Aromatic, layered, and indulgent</p>
-                      </div>
-                   </div>
-                   <div class="tp-project-side-card pro-img-1">
-                      <img src="assets/card/biryani-1.jpg" alt="">
-                   </div>
-                   <div class="tp-project-side-card pro-img-2">
-                      <img src="assets/card/combo-1.jpg" alt="">
-                   </div>
+        <section class="tp-project-3-area" style="background-color: #173826">
+          <div class="tp-project-3-wrap">
+            <div class="tp-project-reveal-inner">
+              <div class="tp-project-center-content">
+                <div class="center-img-wrap">
+                  <img
+                    src="assets/images/Masala_Chicken_with_Garnish.webp"
+                    alt="Masala_Chicken_with_Garnish"
+                  />
                 </div>
-             </div>
+                <div class="text-white text-center">
+                  <h3 class="tp-reveal-title">Non Veg Special</h3>
+                  <p class="tp-reveal-sub">
+                    Richly spiced, tender, and full of flavor
+                  </p>
+                </div>
+              </div>
+              <div class="tp-project-side-card pro-img-1">
+                <img
+                  src="assets/images/Meat_Fry_Fork_Bite.webp"
+                  alt="Meat_Fry_Fork_Bite"
+                />
+              </div>
+              <div class="tp-project-side-card pro-img-2">
+                <img
+                  src="assets/images/Spicy_Chilli_Chicken_Dry.webp"
+                  alt="Spicy_Chilli_Chicken_Dry"
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section class="tp-project-3-area" style="background-color: #173826;">
-             <div class="tp-project-3-wrap">
-                <div class="tp-project-reveal-inner">
-                   <div class="tp-project-center-content">
-                      <div class="center-img-wrap">
-                         <img src="assets/card/chaats-1-removebg-preview.png" alt="">
-                      </div>
-                      <div class="text-white text-center">
-                        <h3 class="tp-reveal-title">Chaats</h3>
-                        <p class="tp-reveal-sub">A vegetarian delight with smoky perfection</p>
-                      </div>
-                   </div>
-                   <div class="tp-project-side-card pro-img-1">
-                      <img src="assets/card/chaat-1.jpg" alt="">
-                   </div>
-                   <div class="tp-project-side-card pro-img-2">
-                      <img src="assets/card/chaat-2.jpg" alt="">
-                   </div>
+        <section class="tp-project-3-area" style="background-color: #173826">
+          <div class="tp-project-3-wrap">
+            <div class="tp-project-reveal-inner">
+              <div class="tp-project-center-content">
+                <div class="center-img-wrap">
+                  <img
+                    src="assets/images/Seafood_Main_Course_Thali.webp"
+                    alt="Seafood_Main_Course_Thali"
+                  />
                 </div>
-             </div>
+                <div class="text-white text-center">
+                  <h3 class="tp-reveal-title">Special Thaali</h3>
+                  <p class="tp-reveal-sub">
+                    A complete meal with a rich array of authentic Indian dishes
+                  </p>
+                </div>
+              </div>
+              <div class="tp-project-side-card pro-img-1">
+                <img
+                  src="assets/images/Aromatic_Fish_Biryani_Bowl.webp"
+                  alt="Aromatic_Fish_Biryani_Bowl"
+                />
+              </div>
+              <div class="tp-project-side-card pro-img-2">
+                <img
+                  src="assets/images/Tikka_Rice_Thali_Plate.webp"
+                  alt="Tikka_Rice_Thali_Plate"
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section class="tp-project-3-area" style="background-color: #173826;">
-             <div class="tp-project-3-wrap">
-                <div class="tp-project-reveal-inner">
-                   <div class="tp-project-center-content">
-                      <div class="center-img-wrap">
-                         <img src="assets/card/curries-2-removebg-preview.png" alt="">
-                      </div>
-                      <div class="text-white text-center">
-                        <h3 class="tp-reveal-title">Curries</h3>
-                        <p class="tp-reveal-sub">Slow-cooked overnight for that authentic Delhi touch</p>
-                      </div>
-                   </div>
-                   <div class="tp-project-side-card pro-img-1">
-                      <img src="assets/card/curry-1.jpg" alt="">
-                   </div>
-                   <div class="tp-project-side-card pro-img-2">
-                      <img src="assets/card/curry-2.jpg" alt="">
-                   </div>
+        <section class="tp-project-3-area" style="background-color: #173826">
+          <div class="tp-project-3-wrap">
+            <div class="tp-project-reveal-inner">
+              <div class="tp-project-center-content">
+                <div class="center-img-wrap">
+                  <img
+                    src="assets/images/Crispy_Appetizer_Chutney_Dip.webp"
+                    alt="Crispy_Appetizer_Chutney_Dip"
+                  />
                 </div>
-             </div>
+                <div class="text-white text-center">
+                  <h3 class="tp-reveal-title">Appetizers</h3>
+                  <p class="tp-reveal-sub">
+                    Mouth-watering appetizers with a twist of Konkan flavours
+                  </p>
+                </div>
+              </div>
+              <div class="tp-project-side-card pro-img-1">
+                <img
+                  src="assets/images/Crispy_Fried_Prawns_with_Chips.webp"
+                  alt="Crispy_Fried_Prawns_with_Chips"
+                />
+              </div>
+              <div class="tp-project-side-card pro-img-2">
+                <img
+                  src="assets/images/Fried_Cutlets_Wooden_Platter.webp"
+                  alt="Fried_Cutlets_Wooden_Platter"
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
         <!-- Chef’s Picks (Repurposed Craft Section) 
@@ -343,7 +600,7 @@
                     </div>
                     <h2 class="display-3 fw-bold text-white mb-4">Start here if it’s your first visit.</h2>
                     <p class="text-white/70 lead mb-6">A few dishes we recommend without overthinking it.</p>
-                    <a href="menu.html" class="kc-button kc-button--secondary text-white border-white/30 hover:bg-[#cf3819] hover:text-white hover:border-[#cf3819]">Explore Full Menu</a>
+                    <a href="menu.html" class="kc-button kc-button--primary">Explore Full Menu</a>
                   </div>
 
                   <div class="kc-craft__blocks">
@@ -399,112 +656,479 @@
         </section>
  -->
         <!-- Dining Experience / When to Visit -->
-        <section class="kc-moments w-full py-20 sm:py-24 lg:py-28 bg-primary" id="moments">
+        <section
+          class="kc-moments w-full py-20 sm:py-24 lg:py-28 bg-primary"
+          id="moments"
+        >
           <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div class="kc-moments__header mb-12 lg:mb-16">
               <div class="kc-hero-badge mb-2">
-                    <span class="kc-hero-badge__text">Dining Moments</span>
-                  </div>
-              <h2 class="display-5 fw-bold text-primary mb-2">Built for seafood cravings that deserve time.</h2>
-              <p class="text-secondary lead">Whether it’s a slow family dinner or a weekend coastal fix, Konkan Curry is made for meals you don’t rush.</p>
+                <span class="kc-hero-badge__text">Dining Moments</span>
+              </div>
+              <h2 class="display-5 fw-bold text-primary mb-2">
+                Built for seafood cravings that deserve time.
+              </h2>
+              <p class="text-secondary lead">
+                Whether it’s a slow family dinner or a weekend coastal fix,
+                Konkan Curry is made for meals you don’t rush.
+              </p>
             </div>
 
             <div class="kc-signature-creations__grid">
               <!-- Moment 1 -->
-              <div class="kc-signature-card reveal-signature" style="transition-delay: 0ms;">
-                <img src="assets/images/signature-dishes.webp" alt="Smoked Crab" class="kc-signature-card__img" loading="lazy">
+              <div
+                class="kc-signature-card reveal-signature"
+                style="transition-delay: 0ms"
+              >
+                <img
+                  src="assets/images/Spicy_Crab_Masala_Roast.webp"
+                  alt="Smoked Crab"
+                  class="kc-signature-card__img"
+                  loading="lazy"
+                />
                 <div class="kc-signature-card__overlay">
                   <h3 class="kc-signature-card__title">Family Dinners</h3>
-                  <p class="kc-signature-card__desc text-lg text-primary font-medium">Shared curries and crisp fry for the whole table.</p>
+                  <p
+                    class="kc-signature-card__desc text-lg text-primary font-medium"
+                  >
+                    Perfect for sharing, with a variety of dishes that everyone
+                    will enjoy.
+                  </p>
                 </div>
               </div>
-              
+
               <!-- Moment 2 -->
-              <div class="kc-signature-card reveal-signature" style="transition-delay: 100ms;">
-                <img src="assets/images/nonveg.webp" alt="Coastal Prawn" class="kc-signature-card__img" loading="lazy">
+              <div
+                class="kc-signature-card reveal-signature"
+                style="transition-delay: 100ms"
+              >
+                <img
+                  src="assets/images/Authentic_Indian_Fish_Curry.webp"
+                  alt="Coastal Prawn"
+                  class="kc-signature-card__img"
+                  loading="lazy"
+                />
                 <div class="kc-signature-card__overlay">
                   <h3 class="kc-signature-card__title">Weekend Fix</h3>
-                  <p class="kc-signature-card__desc text-lg text-primary font-medium">Crab, prawns, and meals that slow the evening down.</p>
+                  <p
+                    class="kc-signature-card__desc text-lg text-primary font-medium"
+                  >
+                    Flavors that bring people together, perfect for weekend
+                    gatherings.
+                  </p>
                 </div>
               </div>
 
               <!-- Moment 3 -->
-              <div class="kc-signature-card reveal-signature" style="transition-delay: 200ms;">
-                <img src="assets/images/starters.webp" alt="Crisp Catch" class="kc-signature-card__img" loading="lazy">
+              <div
+                class="kc-signature-card reveal-signature"
+                style="transition-delay: 200ms"
+              >
+                <img
+                  src="assets/images/Tawa_Fried_Pomfret_with_Onion_Rings.webp"
+                  alt="Crisp Catch"
+                  class="kc-signature-card__img"
+                  loading="lazy"
+                />
                 <div class="kc-signature-card__overlay">
                   <h3 class="kc-signature-card__title">Casual Lunches</h3>
-                  <p class="kc-signature-card__desc text-lg text-primary font-medium">Coastal comfort without making it complicated.</p>
+                  <p
+                    class="kc-signature-card__desc text-lg text-primary font-medium"
+                  >
+                    Quick, flavorful meals perfect for a satisfying lunch break.
+                  </p>
                 </div>
               </div>
 
               <!-- Moment 4 -->
-              <div class="kc-signature-card reveal-signature" style="transition-delay: 300ms;">
-                <img src="assets/images/veg.webp" alt="Earth & Spice" class="kc-signature-card__img" loading="lazy">
+              <div
+                class="kc-signature-card reveal-signature"
+                style="transition-delay: 300ms"
+              >
+                <img
+                  src="assets/images/Malai_Paneer_Tikka_Bowl.webp"
+                  alt="Earth & Spice"
+                  class="kc-signature-card__img"
+                  loading="lazy"
+                />
                 <div class="kc-signature-card__overlay">
-                  <h3 class="kc-signature-card__title">Spicy Cravings</h3>
-                  <p class="kc-signature-card__desc text-lg text-primary font-medium">Proper Konkan balance for when you need heat.</p>
+                  <h3 class="kc-signature-card__title">Corporate Cravings</h3>
+                  <p
+                    class="kc-signature-card__desc text-lg text-primary font-medium"
+                  >
+                    Satisfy your corporate cravings with authentic Indian
+                    flavours.
+                  </p>
                 </div>
               </div>
             </div>
 
             <div class="mt-8 flex justify-end reveal-moment">
-              <a href="reservations.html" class="kc-button kc-button--secondary">
+              <button
+                type="button"
+                class="kc-button kc-button--primary openReserveModalBtn"
+              >
                 Plan your visit
-              </a>
-            </div> 
+              </button>
+            </div>
           </div>
         </section>
 
         <!-- Curated Menu Teaser -->
-        <section class="kc-menu-teaser" id="menu-teaser">
+        <section class="kc-menu-teaser py-2 py-lg-3" id="menu-teaser">
           <div class="kc-menu-teaser__bg"></div>
-          <div class="container py-5">
-            <div class="row pt-5 pb-4">
+          <div class="container py-2">
+            <div class="row pt-2 pb-2">
               <!-- Left: Heading -->
-              <div class="col-12 col-lg-5 mb-5 mb-lg-0 kc-menu-teaser__header-col">
-                <div class="pe-lg-5 position-sticky top-0 pt-5">
+              <div
+                class="col-12 col-lg-5 mb-4 mb-lg-0 kc-menu-teaser__header-col"
+              >
+                <div class="pe-lg-5 position-sticky top-0 pt-0">
                   <div class="kc-hero-badge mb-2">
                     <span class="kc-hero-badge__text">Menu Preview</span>
                   </div>
-                  <h2 class="display-3 fw-bold text-primary lh-sm mb-4">Coastal favourites, selected with intent.</h2>
-                  <p class="lead text-secondary mb-0">From crisp fried fish to coconut-rich curries, every dish is built around freshness, spice balance, and proper coastal flavour.</p>
+                  <h2 class="display-3 fw-bold text-primary lh-sm mb-4">
+                    Coastal favourites, selected with intent.
+                  </h2>
+                  <p class="lead text-secondary mb-0">
+                    From crisp fried fish to coconut-rich curries, every dish is
+                    built around freshness, spice balance, and proper coastal
+                    flavour.
+                  </p>
                   <!-- CTA -->
-                <div class="mt-5 pt-2">
-                  <a href="menu.html" class="kc-button kc-button--secondary">Explore Full Menu</a>
-                </div>
+                  <div class="mt-4 pt-1">
+                    <a href="menu.html" class="kc-button kc-button--primary"
+                      >Explore Full Menu</a
+                    >
+                  </div>
                 </div>
               </div>
 
               <!-- Right: Categories & Menu List -->
-              <div class="col-12 col-lg-6 offset-lg-1 kc-menu-teaser__list-col pt-lg-5">
+              <div
+                class="col-12 col-lg-6 offset-lg-1 kc-menu-teaser__list-col pt-lg-0"
+              >
                 <!-- Tabs -->
-                <div class="kc-menu-teaser__tabs mb-5 d-flex gap-4 overflow-auto pb-2">
-                  <button class="kc-menu-teaser__tab active" data-category="fish">Fish</button>
-                  <button class="kc-menu-teaser__tab" data-category="prawns">Prawns</button>
-                  <button class="kc-menu-teaser__tab" data-category="crab">Crab</button>
-                  <button class="kc-menu-teaser__tab" data-category="curries">Curries</button>
-                  <button class="kc-menu-teaser__tab" data-category="veg">Veg Coastal</button>
+                <div
+                  class="kc-menu-teaser__tabs mb-5 d-flex gap-3 overflow-auto pb-2"
+                >
+                  <button
+                    class="kc-menu-teaser__tab active"
+                    data-category="seafood"
+                  >
+                    Konkan Special Seafood
+                  </button>
+                  <button class="kc-menu-teaser__tab" data-category="starters">
+                    Starters & Tandoori
+                  </button>
+                  <button
+                    class="kc-menu-teaser__tab"
+                    data-category="maharashtrian"
+                  >
+                    Maharashtrian Rasoi
+                  </button>
+                  <button
+                    class="kc-menu-teaser__tab"
+                    data-category="maincourse"
+                  >
+                    Indian Main Course
+                  </button>
+                  <button class="kc-menu-teaser__tab" data-category="chinese">
+                    Chinese
+                  </button>
+                  <button class="kc-menu-teaser__tab" data-category="beverages">
+                    Desserts & Beverages
+                  </button>
                 </div>
 
                 <!-- Menu Container -->
                 <div class="kc-menu-teaser__items" id="menu-teaser-items">
                   <!-- JS will populate these items -->
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                
+        <!-- Location Menus Showcase Section -->
+        <section
+          class="py-5 py-lg-6 bg-primary overflow-hidden border-top border-bottom"
+          id="location-menus"
+        >
+          <div class="container py-lg-5">
+            <div class="text-center mb-5">
+              <div class="kc-hero-badge mb-3">
+                <span class="kc-hero-badge__text">Our Outlets & Specials</span>
+              </div>
+              <h2 class="display-3 fw-bold text-primary mb-3">
+                Menus Across Our Locations
+              </h2>
+              <p class="lead text-secondary mx-auto" style="max-width: 750px">
+                Discover the signature culinary selections and featured menu
+                categories served at each of our branches.
+              </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+              <!-- Kopar Location Card -->
+              <div class="col-12 col-lg-4">
+                <div
+                  class="card h-100 rounded-4 border-0 shadow-sm overflow-hidden bg-white p-4 p-xl-5 d-flex flex-column transition-all hover:shadow-lg"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-between mb-4"
+                  >
+                    <span class="kc-hero-badge mb-0"
+                      ><span class="kc-hero-badge__text"
+                        >Kopar Branch</span
+                      ></span
+                    >
+                    <span
+                      class="badge bg-light text-dark border px-3 py-2 rounded-pill small"
+                      >15 Categories</span
+                    >
+                  </div>
+                  <h3 class="h3 fw-bold mb-3 text-dark">Kopar Menu Specials</h3>
+                  <p class="small text-secondary mb-4">
+                    Featuring traditional Konkan seafood, Maharashtrian Rasoi,
+                    Tandoori roasts, and exclusive chef specials.
+                  </p>
+
+                  <div class="mb-4">
+                    <h4
+                      class="small fw-bold text-dark text-uppercase tracking-wider mb-2"
+                    >
+                      Featured Categories
+                    </h4>
+                    <div class="d-flex flex-wrap gap-1 mb-4">
+                      <span class="badge bg-light text-secondary border">Soups</span>
+                      <span class="badge bg-light text-secondary border">Starters</span>
+                      <span class="badge bg-light text-secondary border">Tandoori</span>
+                      <span class="badge bg-light text-secondary border">Konkan Special Seafood</span>
+                      <span class="badge bg-light text-secondary border">Maharashtrian Rasoi</span>
+                      <span class="badge bg-light text-secondary border">Indian Main Course</span>
+                      <span class="badge bg-light text-secondary border">Konkan Curry Chef's Special</span>
+                      <span class="badge bg-light text-secondary border">Indian Bread</span>
+                      <span class="badge bg-light text-secondary border">Rice and Pulao</span>
+                      <span class="badge bg-light text-secondary border">Sides and Papad</span>
+                      <span class="badge bg-light text-secondary border">Egg Preparations</span>
+                      <span class="badge bg-light text-secondary border">Raita</span>
+                      <span class="badge bg-light text-secondary border">Rice and Noodles</span>
+                      <span class="badge bg-light text-secondary border">Desserts</span>
+                      <span class="badge bg-light text-secondary border">Beverages</span>
+                    </div>
+
+                    <h4
+                      class="small fw-bold text-dark text-uppercase tracking-wider mb-2"
+                    >
+                      Branch Bestsellers
+                    </h4>
+                    <ul
+                      class="list-unstyled small text-secondary mb-0 space-y-1"
+                    >
+                      <li>
+                        ✨ <strong>Prawn Gassi</strong> – Tangy coconut gravy
+                      </li>
+                      <li>
+                        ✨ <strong>Crab Masala</strong> – Roasted coastal spices
+                      </li>
+                      <li>
+                        ✨ <strong>Sol Kadhi</strong> – Cooling Kokum digestive
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-auto pt-3">
+                    <a
+                      href="location/kopar-khairane.html"
+                      class="kc-button kc-button--primary text-white w-100 text-center justify-content-center"
+                      >Explore Kopar Menu</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kharghar Location Card -->
+              <div class="col-12 col-lg-4">
+                <div
+                  class="card h-100 rounded-4 border-0 shadow-sm overflow-hidden bg-white p-4 p-xl-5 d-flex flex-column transition-all hover:shadow-lg"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-between mb-4"
+                  >
+                    <span class="kc-hero-badge mb-0"
+                      ><span class="kc-hero-badge__text"
+                        >Kharghar Flagship</span
+                      ></span
+                    >
+                    <span
+                      class="badge bg-light text-dark border px-3 py-2 rounded-pill small"
+                      >13 Categories</span
+                    >
+                  </div>
+                  <h3 class="h3 fw-bold mb-3 text-dark">
+                    Kharghar Menu Specials
+                  </h3>
+                  <p class="small text-secondary mb-4">
+                    Our flagship menu with Chinese wok preparations, tandoori
+                    starters, and signature Konkan catches.
+                  </p>
+
+                  <div class="mb-4">
+                    <h4
+                      class="small fw-bold text-dark text-uppercase tracking-wider mb-2"
+                    >
+                      Featured Categories
+                    </h4>
+                    <div class="d-flex flex-wrap gap-1 mb-4">
+                      <span class="badge bg-light text-secondary border">Soups</span>
+                      <span class="badge bg-light text-secondary border">Starters</span>
+                      <span class="badge bg-light text-secondary border">Tandoori</span>
+                      <span class="badge bg-light text-secondary border">Chinese</span>
+                      <span class="badge bg-light text-secondary border">Konkan Special Seafood</span>
+                      <span class="badge bg-light text-secondary border">Maharashtrian Rasoi</span>
+                      <span class="badge bg-light text-secondary border">Indian</span>
+                      <span class="badge bg-light text-secondary border">Konkan Curry Chef's Special</span>
+                      <span class="badge bg-light text-secondary border">Indian Bread</span>
+                      <span class="badge bg-light text-secondary border">Rice and Pulao</span>
+                      <span class="badge bg-light text-secondary border">Rice and Noodles</span>
+                      <span class="badge bg-light text-secondary border">Desserts</span>
+                      <span class="badge bg-light text-secondary border">Beverages</span>
+                    </div>
+
+                    <h4
+                      class="small fw-bold text-dark text-uppercase tracking-wider mb-2"
+                    >
+                      Branch Bestsellers
+                    </h4>
+                    <ul
+                      class="list-unstyled small text-secondary mb-0 space-y-1"
+                    >
+                      <li>
+                        ✨ <strong>Pomfret Rava Fry</strong> – Crispy semolina
+                        crust
+                      </li>
+                      <li>
+                        ✨ <strong>Surmai Tawa Fry</strong> – Fiery red chilli
+                        marinade
+                      </li>
+                      <li>
+                        ✨ <strong>Mutton Sukka</strong> – Slow-roasted dry
+                        spices
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-auto pt-3">
+                    <a
+                      href="location/kharghar.html"
+                      class="kc-button kc-button--primary text-white w-100 text-center justify-content-center"
+                      >Explore Kharghar Menu</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Roadpali Location Card -->
+              <div class="col-12 col-lg-4">
+                <div
+                  class="card h-100 rounded-4 border-0 shadow-sm overflow-hidden bg-white p-4 p-xl-5 d-flex flex-column transition-all hover:shadow-lg"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-between mb-4"
+                  >
+                    <span class="kc-hero-badge mb-0"
+                      ><span class="kc-hero-badge__text"
+                        >Roadpali Branch</span
+                      ></span
+                    >
+                    <span
+                      class="badge bg-light text-dark border px-3 py-2 rounded-pill small"
+                      >16 Categories</span
+                    >
+                  </div>
+                  <h3 class="h3 fw-bold mb-3 text-dark">
+                    Roadpali Menu Specials
+                  </h3>
+                  <p class="small text-secondary mb-4">
+                    A rich variety featuring Mocktails, Platters, Punjabi Rasoi,
+                    Swadeshi Breads, and Kurkuri Sides.
+                  </p>
+
+                  <div class="mb-4">
+                    <h4
+                      class="small fw-bold text-dark text-uppercase tracking-wider mb-2"
+                    >
+                      Featured Categories
+                    </h4>
+                    <div class="d-flex flex-wrap gap-1 mb-4">
+                      <span class="badge bg-light text-secondary border">Mocktails</span>
+                      <span class="badge bg-light text-secondary border">Soups</span>
+                      <span class="badge bg-light text-secondary border">Starters</span>
+                      <span class="badge bg-light text-secondary border">Chinese</span>
+                      <span class="badge bg-light text-secondary border">Tandoori</span>
+                      <span class="badge bg-light text-secondary border">Konkan Special Seafood</span>
+                      <span class="badge bg-light text-secondary border">Chicken</span>
+                      <span class="badge bg-light text-secondary border">Platters</span>
+                      <span class="badge bg-light text-secondary border">Maharashtrian Rasoi</span>
+                      <span class="badge bg-light text-secondary border">Punjabi Rasoi</span>
+                      <span class="badge bg-light text-secondary border">Swadeshi Bread</span>
+                      <span class="badge bg-light text-secondary border">Maharashtrian Bread</span>
+                      <span class="badge bg-light text-secondary border">Basmati Khazana</span>
+                      <span class="badge bg-light text-secondary border">Kurkuri Side</span>
+                      <span class="badge bg-light text-secondary border">Desserts</span>
+                      <span class="badge bg-light text-secondary border">Beverages</span>
+                    </div>
+
+                    <h4
+                      class="small fw-bold text-dark text-uppercase tracking-wider mb-2"
+                    >
+                      Branch Bestsellers
+                    </h4>
+                    <ul
+                      class="list-unstyled small text-secondary mb-0 space-y-1"
+                    >
+                      <li>
+                        ✨ <strong>Seafood Platter</strong> – Assorted fresh
+                        catch
+                      </li>
+                      <li>
+                        ✨ <strong>Chicken Sukka</strong> – Grated coconut roast
+                      </li>
+                      <li>
+                        ✨ <strong>Craft Mocktails</strong> – Tropical coastal
+                        blends
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-auto pt-3">
+                    <a
+                      href="location/roadpali.html"
+                      class="kc-button kc-button--primary text-white w-100 text-center justify-content-center"
+                      >Explore Roadpali Menu</a
+                    >
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <!-- Social Proof / Reviews -->
-        <section class="kc-reviews py-5 position-relative overflow-hidden" id="reviews">
+        <section
+          class="kc-reviews py-5 position-relative overflow-hidden"
+          id="reviews"
+        >
           <div class="container py-lg-5">
             <div class="row align-items-center mb-5">
               <div class="col-lg-8">
                 <div class="kc-hero-badge mb-2">
-                    <span class="kc-hero-badge__text">From Our Guests</span>
-                  </div>
-                <h2 class="display-4 fw-bold text-primary lh-sm">People come for the seafood. They come back for everything else.</h2>
+                  <span class="kc-hero-badge__text">From Our Guests</span>
+                </div>
+                <h2 class="display-4 fw-bold text-primary lh-sm">
+                  People come for the seafood. They come back for everything
+                  else.
+                </h2>
               </div>
             </div>
           </div>
@@ -517,248 +1141,530 @@
                 <!-- Set 1 -->
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #d1fae5;">AM</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #d1fae5"
+                    >
+                      AM
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Aarav Mehta <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Aarav Mehta
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">2 days ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Authentic coastal flavors, clean and genuinely fresh.</h4>
-                  <p class="kc-review-card__body">The Pomfret fry was crisp and the masala had the perfect depth. Definitely the best seafood spot in Navi Mumbai.</p>
+                  <h4 class="kc-review-card__title">
+                    Authentic coastal flavors, clean and genuinely fresh.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    The Pomfret fry was crisp and the masala had the perfect
+                    depth. Definitely the best seafood spot in Navi Mumbai.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #e0f2fe;">NR</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #e0f2fe"
+                    >
+                      NR
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Nisha Rao <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Nisha Rao
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">1 week ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Great Prawn Gassi, slightly spicy but rich.</h4>
-                  <p class="kc-review-card__body">The coconut base was incredibly smooth and the prawns were fresh. Pairs perfectly with Neer Dosa.</p>
+                  <h4 class="kc-review-card__title">
+                    Great Prawn Gassi, slightly spicy but rich.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    The coconut base was incredibly smooth and the prawns were
+                    fresh. Pairs perfectly with Neer Dosa.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #fef3c7;">RW</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #fef3c7"
+                    >
+                      RW
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Robert Wilson <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Robert Wilson
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">2 weeks ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Consistent quality and easy to reserve.</h4>
-                  <p class="kc-review-card__body">We visit every weekend and the quality never drops. The online reservation makes it very convenient.</p>
+                  <h4 class="kc-review-card__title">
+                    Consistent quality and easy to reserve.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    We visit every weekend and the quality never drops. The
+                    online reservation makes it very convenient.
+                  </p>
                 </div>
                 <!-- Set 2 -->
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #d1fae5;">AM</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #d1fae5"
+                    >
+                      AM
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Aarav Mehta <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Aarav Mehta
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">2 days ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Authentic coastal flavors, clean and genuinely fresh.</h4>
-                  <p class="kc-review-card__body">The Pomfret fry was crisp and the masala had the perfect depth. Definitely the best seafood spot in Navi Mumbai.</p>
+                  <h4 class="kc-review-card__title">
+                    Authentic coastal flavors, clean and genuinely fresh.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    The Pomfret fry was crisp and the masala had the perfect
+                    depth. Definitely the best seafood spot in Navi Mumbai.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #e0f2fe;">NR</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #e0f2fe"
+                    >
+                      NR
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Nisha Rao <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Nisha Rao
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">1 week ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Great Prawn Gassi, slightly spicy but rich.</h4>
-                  <p class="kc-review-card__body">The coconut base was incredibly smooth and the prawns were fresh. Pairs perfectly with Neer Dosa.</p>
+                  <h4 class="kc-review-card__title">
+                    Great Prawn Gassi, slightly spicy but rich.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    The coconut base was incredibly smooth and the prawns were
+                    fresh. Pairs perfectly with Neer Dosa.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #fef3c7;">RW</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #fef3c7"
+                    >
+                      RW
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Robert Wilson <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Robert Wilson
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">2 weeks ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Consistent quality and easy to reserve.</h4>
-                  <p class="kc-review-card__body">We visit every weekend and the quality never drops. The online reservation makes it very convenient.</p>
+                  <h4 class="kc-review-card__title">
+                    Consistent quality and easy to reserve.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    We visit every weekend and the quality never drops. The
+                    online reservation makes it very convenient.
+                  </p>
                 </div>
                 <!-- Set 3 -->
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #d1fae5;">AM</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #d1fae5"
+                    >
+                      AM
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Aarav Mehta <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Aarav Mehta
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">2 days ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Authentic coastal flavors, clean and genuinely fresh.</h4>
-                  <p class="kc-review-card__body">The Pomfret fry was crisp and the masala had the perfect depth. Definitely the best seafood spot in Navi Mumbai.</p>
+                  <h4 class="kc-review-card__title">
+                    Authentic coastal flavors, clean and genuinely fresh.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    The Pomfret fry was crisp and the masala had the perfect
+                    depth. Definitely the best seafood spot in Navi Mumbai.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #e0f2fe;">NR</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #e0f2fe"
+                    >
+                      NR
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Nisha Rao <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Nisha Rao
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">1 week ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Great Prawn Gassi, slightly spicy but rich.</h4>
-                  <p class="kc-review-card__body">The coconut base was incredibly smooth and the prawns were fresh. Pairs perfectly with Neer Dosa.</p>
+                  <h4 class="kc-review-card__title">
+                    Great Prawn Gassi, slightly spicy but rich.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    The coconut base was incredibly smooth and the prawns were
+                    fresh. Pairs perfectly with Neer Dosa.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #fef3c7;">RW</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #fef3c7"
+                    >
+                      RW
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Robert Wilson <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Robert Wilson
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">2 weeks ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Consistent quality and easy to reserve.</h4>
-                  <p class="kc-review-card__body">We visit every weekend and the quality never drops. The online reservation makes it very convenient.</p>
+                  <h4 class="kc-review-card__title">
+                    Consistent quality and easy to reserve.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    We visit every weekend and the quality never drops. The
+                    online reservation makes it very convenient.
+                  </p>
                 </div>
               </div>
             </div>
-            
+
             <!-- Row 2: Right to Left -->
             <div class="kc-reviews__marquee kc-reviews__marquee--rtl">
               <div class="kc-reviews__marquee-inner">
                 <!-- Set 1 -->
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #fce7f3;">SK</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #fce7f3"
+                    >
+                      SK
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Sameer Khan <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Sameer Khan
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">3 days ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Crab Sukka is messy but totally worth it.</h4>
-                  <p class="kc-review-card__body">If you don't mind getting your hands dirty, this is the dish to get. Perfectly spiced and very fresh.</p>
+                  <h4 class="kc-review-card__title">
+                    Crab Sukka is messy but totally worth it.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    If you don't mind getting your hands dirty, this is the dish
+                    to get. Perfectly spiced and very fresh.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #ede9fe;">PL</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #ede9fe"
+                    >
+                      PL
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Pooja L. <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Pooja L.
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">5 days ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Small batches, big taste. Authentic flavors.</h4>
-                  <p class="kc-review-card__body">You can tell everything is made to order. The surmai curry was phenomenal.</p>
+                  <h4 class="kc-review-card__title">
+                    Small batches, big taste. Authentic flavors.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    You can tell everything is made to order. The surmai curry
+                    was phenomenal.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #ffedd5;">DJ</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #ffedd5"
+                    >
+                      DJ
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">David J. <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        David J.
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">1 month ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Never frozen. Always fresh. A hidden gem.</h4>
-                  <p class="kc-review-card__body">Best coastal food in the city. The service is prompt and the vibe is very coastal.</p>
+                  <h4 class="kc-review-card__title">
+                    Never frozen. Always fresh. A hidden gem.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    Best coastal food in the city. The service is prompt and the
+                    vibe is very coastal.
+                  </p>
                 </div>
                 <!-- Set 2 -->
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #fce7f3;">SK</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #fce7f3"
+                    >
+                      SK
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Sameer Khan <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Sameer Khan
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">3 days ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Crab Sukka is messy but totally worth it.</h4>
-                  <p class="kc-review-card__body">If you don't mind getting your hands dirty, this is the dish to get. Perfectly spiced and very fresh.</p>
+                  <h4 class="kc-review-card__title">
+                    Crab Sukka is messy but totally worth it.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    If you don't mind getting your hands dirty, this is the dish
+                    to get. Perfectly spiced and very fresh.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #ede9fe;">PL</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #ede9fe"
+                    >
+                      PL
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Pooja L. <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Pooja L.
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">5 days ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Small batches, big taste. Authentic flavors.</h4>
-                  <p class="kc-review-card__body">You can tell everything is made to order. The surmai curry was phenomenal.</p>
+                  <h4 class="kc-review-card__title">
+                    Small batches, big taste. Authentic flavors.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    You can tell everything is made to order. The surmai curry
+                    was phenomenal.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #ffedd5;">DJ</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #ffedd5"
+                    >
+                      DJ
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">David J. <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        David J.
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">1 month ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Never frozen. Always fresh. A hidden gem.</h4>
-                  <p class="kc-review-card__body">Best coastal food in the city. The service is prompt and the vibe is very coastal.</p>
+                  <h4 class="kc-review-card__title">
+                    Never frozen. Always fresh. A hidden gem.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    Best coastal food in the city. The service is prompt and the
+                    vibe is very coastal.
+                  </p>
                 </div>
                 <!-- Set 3 -->
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #fce7f3;">SK</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #fce7f3"
+                    >
+                      SK
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Sameer Khan <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Sameer Khan
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">3 days ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Crab Sukka is messy but totally worth it.</h4>
-                  <p class="kc-review-card__body">If you don't mind getting your hands dirty, this is the dish to get. Perfectly spiced and very fresh.</p>
+                  <h4 class="kc-review-card__title">
+                    Crab Sukka is messy but totally worth it.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    If you don't mind getting your hands dirty, this is the dish
+                    to get. Perfectly spiced and very fresh.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #ede9fe;">PL</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #ede9fe"
+                    >
+                      PL
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">Pooja L. <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        Pooja L.
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">5 days ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Small batches, big taste. Authentic flavors.</h4>
-                  <p class="kc-review-card__body">You can tell everything is made to order. The surmai curry was phenomenal.</p>
+                  <h4 class="kc-review-card__title">
+                    Small batches, big taste. Authentic flavors.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    You can tell everything is made to order. The surmai curry
+                    was phenomenal.
+                  </p>
                 </div>
                 <div class="kc-review-card">
                   <div class="kc-review-card__header">
-                    <div class="kc-review-card__avatar" style="background-color: #ffedd5;">DJ</div>
+                    <div
+                      class="kc-review-card__avatar"
+                      style="background-color: #ffedd5"
+                    >
+                      DJ
+                    </div>
                     <div class="kc-review-card__author-info">
-                      <div class="kc-review-card__author-name">David J. <span class="kc-review-card__verified-icon"><i class="fas fa-check"></i></span></div>
+                      <div class="kc-review-card__author-name">
+                        David J.
+                        <span class="kc-review-card__verified-icon"
+                          ><i class="fas fa-check"></i
+                        ></span>
+                      </div>
                       <div class="kc-review-card__time">1 month ago</div>
                     </div>
                   </div>
                   <div class="kc-review-card__rating">★★★★★</div>
-                  <h4 class="kc-review-card__title">Never frozen. Always fresh. A hidden gem.</h4>
-                  <p class="kc-review-card__body">Best coastal food in the city. The service is prompt and the vibe is very coastal.</p>
+                  <h4 class="kc-review-card__title">
+                    Never frozen. Always fresh. A hidden gem.
+                  </h4>
+                  <p class="kc-review-card__body">
+                    Best coastal food in the city. The service is prompt and the
+                    vibe is very coastal.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="kc-essentials py-24 lg:py-32 bg-[#080808] overflow-hidden" id="essentials">
+        <section
+          class="kc-essentials py-24 lg:py-32 bg-[#080808] overflow-hidden"
+          id="essentials"
+        >
           <div class="container">
             <div class="row align-items-end mb-16 reveal-gallery-header">
               <div class="col-lg-8">
                 <div class="kc-hero-badge mb-4">
                   <span class="kc-hero-badge__text">Visit Essentials</span>
                 </div>
-                <h2 class="display-3 fw-bold text-white mb-4">Know before you arrive.</h2>
-                <p class="text-white/60 lead mb-0 max-w-2xl">Quick details to make your coastal dining experience seamless and memorable.</p>
+                <h2 class="display-3 fw-bold text-white mb-4">
+                  Know before you arrive.
+                </h2>
+                <p class="text-white/60 lead mb-0 max-w-2xl">
+                  Quick details to make your coastal dining experience seamless
+                  and memorable.
+                </p>
               </div>
               <div class="col-lg-4 text-lg-end mt-6 mt-lg-0">
-                <a href="https://maps.app.goo.gl/qX8s8vB8vB8vB8vB8" target="_blank" class="kc-button kc-button--primary px-5 py-3 rounded-pill">
+                <a
+                  href="https://maps.app.goo.gl/qX8s8vB8vB8vB8vB8"
+                  target="_blank"
+                  class="kc-button kc-button--primary px-4 py-3"
+                >
                   <span class="me-2">Get Directions</span>
                   <i class="fas fa-arrow-right"></i>
                 </a>
@@ -776,7 +1682,9 @@
                   </div>
                 </div>
                 <div class="kc-essentials__row-right">
-                  <p class="kc-essentials__desc">Open every day of the week for lunch and dinner.</p>
+                  <p class="kc-essentials__desc">
+                    Open every day of the week for lunch and dinner.
+                  </p>
                 </div>
               </div>
 
@@ -790,7 +1698,9 @@
                   </div>
                 </div>
                 <div class="kc-essentials__row-right">
-                  <p class="kc-essentials__desc">Especially on weekends and public holidays.</p>
+                  <p class="kc-essentials__desc">
+                    Especially on weekends and public holidays.
+                  </p>
                 </div>
               </div>
 
@@ -804,7 +1714,9 @@
                   </div>
                 </div>
                 <div class="kc-essentials__row-right">
-                  <p class="kc-essentials__desc">Traditional coastal recipes using heritage spices.</p>
+                  <p class="kc-essentials__desc">
+                    Traditional coastal recipes using heritage spices.
+                  </p>
                 </div>
               </div>
 
@@ -818,7 +1730,9 @@
                   </div>
                 </div>
                 <div class="kc-essentials__row-right">
-                  <p class="kc-essentials__desc">Hassle-free arrival with our dedicated valet team.</p>
+                  <p class="kc-essentials__desc">
+                    Hassle-free arrival with our dedicated valet team.
+                  </p>
                 </div>
               </div>
             </div>
@@ -826,140 +1740,82 @@
         </section>
 
         <!-- Location + Reservation Fusion -->
-        <section class="kc-reserve d-flex flex-column" id="reserve">
-          <div class="row g-0 flex-grow-1">
-            <!-- Left: Location Experience -->
-            <div class="col-lg-6 kc-reserve__map-col position-relative overflow-hidden order-2 order-lg-1">
-              <div class="kc-reserve__map-container h-100">
-                <!-- Stylized Map Iframe -->
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.537841250243!2d73.07656639999999!3d19.040076199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c306c4efc339:0x3a912103c748db96!2sKonkan%20Curry%20Seafood%20Restaurant%20Kharghar!5e0!3m2!1sen!2sin!4v1777891924994!5m2!1sen!2sin" 
-                  width="100%" 
-                  height="100%" 
-                  style="border:0;" 
-                  allowfullscreen="" 
-                  loading="lazy" 
-                  referrerpolicy="no-referrer-when-downgrade"
-                  title="Konkan Curry Kharghar Location"
-                  class="kc-reserve__iframe"
-                ></iframe>
-              </div>
-              
-              <!-- Map Marker Context -->
-              <div class="kc-reserve__map-context p-4 p-md-5 position-absolute bottom-0 start-0 w-100">
-                <div class="kc-reserve__marker-info d-inline-flex align-items-center gap-3 p-3 rounded-3 shadow-lg">
-                  <div class="kc-reserve__marker-pin">
-                    <span class="kc-reserve__marker-pulse"></span>
-                  </div>
-                  <div>
-                    <p class="text-primary mb-0 fw-bold">Konkan Curry</p>
-                    <p class="text-secondary small mb-0">Kharghar, Navi Mumbai</p>
-                  </div>
-                </div>
-                <div class="mt-4">
-                  <a href="https://maps.app.goo.gl/qX8s8vB8vB8vB8vB8" target="_blank" class="kc-button kc-button--secondary">Get Directions</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right: Reservation Panel -->
-            <div class="col-lg-6 d-flex align-items-center kc-reserve__content-col py-5 px-4 px-md-5 order-1 order-lg-2">
-              <div class="kc-reserve__content-inner mx-auto">
-                <div class="kc-hero-badge mb-2">
+        <section class="kc-reserve" id="reserve">
+          <div class="container">
+            <div class="row g-0 align-items-center">
+              <!-- Left: Visit Us Info Panel -->
+              <div
+                class="col-lg-6 d-flex align-items-center kc-reserve__content-col py-5 px-2 px-md-4 order-1 order-lg-1"
+              >
+                <div class="kc-reserve__content-inner mx-auto">
+                  <div class="kc-hero-badge mb-2">
                     <span class="kc-hero-badge__text">Visit Us</span>
                   </div>
-                <h2 class="display-3 fw-bold text-primary lh-sm mb-4">Your table by the coast is waiting.</h2>
-                <p class="lead text-secondary mb-5">Planning lunch, dinner, or a seafood-heavy weekend meal? Reserve your spot before peak hours.</p>
-                
-                <div class="d-flex flex-column flex-sm-row gap-3 mb-5">
-                  <button type="button" class="kc-button kc-button--primary px-4 py-3 text-center" id="openReserveModal">Reserve a Table</button>
-                  <a href="https://wa.me/919820114418" class="kc-button kc-button--secondary px-4 py-3 text-center">WhatsApp</a>
-                </div>
+                  <h2 class="display-3 fw-bold text-primary lh-sm mb-4">
+                    Your table by the coast is waiting.
+                  </h2>
+                  <p class="lead text-secondary mb-5">
+                    Planning lunch, dinner, or a seafood-heavy weekend meal?
+                    Reserve your spot directly using the form or reach out to us
+                    on WhatsApp.
+                  </p>
 
-                <div class="kc-reserve__quick-details d-grid gap-3 border-top border-main pt-5">
-                  <div class="d-flex align-items-center gap-3">
-                    <span class="text-gold">●</span>
-                    <span class="text-secondary">Open Daily: 12:00 PM – 11:30 PM</span>
+                  <div class="d-flex flex-column flex-sm-row gap-3 mb-5">
+                    <a
+                      href="https://wa.me/919820114418"
+                      target="_blank"
+                      class="kc-button kc-button--primary px-4 py-3 text-center"
+                      >Contact via WhatsApp</a
+                    >
+                    <a
+                      href="menu.html"
+                      class="kc-button kc-button--secondary px-4 py-3 text-center"
+                      >View Menu</a
+                    >
                   </div>
-                  <div class="d-flex align-items-center gap-3">
-                    <span class="text-gold">●</span>
-                    <span class="text-secondary">Lunch & Dinner Service</span>
-                  </div>
-                  <div class="d-flex align-items-center gap-3">
-                    <span class="text-gold">●</span>
-                    <span class="text-secondary">Fresh Seafood Served Daily</span>
+
+                  <div
+                    class="kc-reserve__quick-details d-grid gap-3 border-top border-main pt-5"
+                  >
+                    <div class="d-flex align-items-center gap-3">
+                      <span class="text-gold">●</span>
+                      <span class="text-secondary"
+                        >Open Daily: 12:00 PM – 11:30 PM</span
+                      >
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                      <span class="text-gold">●</span>
+                      <span class="text-secondary">Lunch &amp; Dinner Service</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                      <span class="text-gold">●</span>
+                      <span class="text-secondary"
+                        >Fresh Coastal Seafood Served Daily</span
+                      >
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                      <span class="text-gold">●</span>
+                      <span class="text-secondary"
+                        >Locations: Kharghar, Kopar Khairane &amp; Roadpali</span
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <!-- Right: Reservation Form -->
+              <div
+                class="col-lg-6 d-flex align-items-center justify-content-center kc-reserve__form-col py-5 px-2 px-md-4 order-2 order-lg-2"
+              >
+                <div data-component-src="assets/components/reservation.html" class="w-100"></div>
+              </div>
             </div>
           </div>
+        </section>
       </main>
       <div data-component-src="assets/components/footer.html"></div>
-    </div>
-
-    <!-- Reservation Modal -->
-    <div class="kc-modal" id="reservationModal">
-      <div class="kc-modal__overlay" id="modalOverlay"></div>
-      <div class="kc-modal__container">
-        <button class="kc-modal__close" id="closeReserveModal" aria-label="Close modal">&times;</button>
-        <div class="kc-modal__content">
-          <div class="kc-modal__visual">
-            <img src="assets/images/popup.webp" alt="Konkan Curry Dining">
-          </div>
-          <div class="kc-modal__form-wrapper">
-            <div class="kc-modal__header">
-              <h2 class="display-6 fw-bold text-primary mb-2">Reserve Your Table</h2>
-              <p class="text-secondary small">Planning a visit? Secure your spot below.</p>
-            </div>
-            <form class="kc-modal__form">
-              <!-- Name: 100% -->
-              <div class="mb-3">
-                <label class="form-label small fw-bold text-uppercase">Full Name</label>
-                <input type="text" class="form-control" placeholder="Aarav Mehta" required>
-              </div>
-
-              <!-- Date & Time: 50/50 -->
-              <div class="row">
-                <div class="col-6 mb-3">
-                  <label class="form-label small fw-bold text-uppercase">Date</label>
-                  <input type="date" class="form-control" required>
-                </div>
-                <div class="col-6 mb-3">
-                  <div class="kc-time-wrapper position-relative">
-                    <label class="form-label small fw-bold text-uppercase">Time (24h)</label>
-                    <select class="form-control kc-modal__time-select" required>
-                      <option value="">Select Time</option>
-                      <option>12:00 AM</option><option>01:00 AM</option><option>02:00 AM</option><option>03:00 AM</option>
-                      <option>04:00 AM</option><option>05:00 AM</option><option>06:00 AM</option><option>07:00 AM</option>
-                      <option>08:00 AM</option><option>09:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
-                      <option>12:00 PM</option><option>01:00 PM</option><option>02:00 PM</option><option>03:00 PM</option>
-                      <option>04:00 PM</option><option>05:00 PM</option><option>06:00 PM</option><option>07:00 PM</option>
-                      <option>08:00 PM</option><option>09:00 PM</option><option>10:00 PM</option><option>11:00 PM</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Guests & Location: 50/50 -->
-              <div class="row">
-                <div class="col-6 mb-4">
-                  <label class="form-label small fw-bold text-uppercase">Guests</label>
-                  <input type="number" class="form-control" min="1" max="10" value="2" required>
-                </div>
-                <div class="col-6 mb-4">
-                  <label class="form-label small fw-bold text-uppercase">Location</label>
-                  <select class="form-control" required>
-                    <option value="Kharghar">Kharghar</option>
-                    <option value="Roadpali">Roadpali</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" class="kc-button kc-button--primary w-100 py-3">Confirm Reservation</button>
-              <p class="text-center mt-3 small text-secondary">We'll call you to confirm within 15 minutes.</p>
-            </form>
-          </div>
-        </div>
-      </div>
+      <!-- Dynamic Popup Component -->
+      <div data-component-src="assets/components/popup.html"></div>
     </div>
 
     <script
@@ -969,6 +1825,7 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

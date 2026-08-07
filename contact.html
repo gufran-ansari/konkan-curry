@@ -28,18 +28,701 @@
       <div data-component-src="assets/components/header.html"></div>
 
       <main id="page-content" class="kc-page-main">
-        <section class="kc-page-hero container text-center py-5 mt-5">
-          <p class="kc-page-hero__eyebrow text-uppercase tracking-wider fw-bold text-secondary mb-2">Contact</p>
-          <h1 class="display-4 fw-bold mb-4">Find A Table</h1>
-          <p class="lead mx-auto" style="max-width: 600px;">
-            Reach the Konkan Curry team for reservations, special requests, and
-            restaurant location support.
-          </p>
+        <!-- 1. Contact Hero Section -->
+        <section
+          class="kc-hero-section position-relative overflow-hidden w-100"
+          style="height: 65vh"
+        >
+          <!-- Background -->
+          <div
+            class="kc-hero-section__bg position-absolute top-0 start-0 w-100 h-100"
+          >
+            <img
+              src="assets/images/interior-11.webp"
+              alt="Konkan Curry Dining Room"
+              class="w-100 h-100"
+              style="object-fit: cover"
+            />
+            <div
+              class="kc-hero-section__overlay"
+              style="
+                background: linear-gradient(
+                  to bottom,
+                  rgba(28, 27, 26, 0.4) 0%,
+                  rgba(28, 27, 26, 0.85) 100%
+                );
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              "
+            ></div>
+          </div>
+
+          <!-- Content -->
+          <div
+            class="kc-hero-section__inner d-flex flex-column justify-content-center align-items-center text-center h-100 position-relative z-1"
+          >
+            <div class="kc-hero-badge mb-3 contact-gs-reveal-up">
+              <span class="kc-hero-badge__text">Get in Touch</span>
+            </div>
+            <h1
+              class="kc-hero-section__title mb-3 text-white contact-gs-reveal-up"
+            >
+              We'd Love to Welcome You
+            </h1>
+            <nav
+              class="kc-breadcrumb contact-gs-reveal-up"
+              aria-label="breadcrumb"
+            >
+              <a href="index.html">Home</a>
+              <span class="separator">/</span>
+              <span class="current" aria-current="page">Contact</span>
+            </nav>
+          </div>
+        </section>
+
+        <!-- 3. Contact Form & Connect Section -->
+        <section
+          id="contact-form-section"
+          class="py-5 py-lg-6"
+          style="background: var(--clr-bg)"
+        >
+          <div class="container mx-auto px-4 max-w-6xl py-4">
+            <!-- Centered Section Header -->
+            <div class="text-center mb-5 contact-gs-reveal-up">
+              <div
+                class="kc-hero-badge mb-3 border-dark border-opacity-10 text-dark mx-auto d-inline-flex"
+                style="background: transparent"
+              >
+                <span class="kc-hero-badge__text">Connect With Us</span>
+              </div>
+              <h2
+                class="display-5 fw-bold text-dark mb-3"
+                style="
+                  font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                "
+              >
+                Get in Touch With Us
+              </h2>
+              <p
+                class="lead text-secondary mx-auto mb-0"
+                style="max-width: 650px"
+              >
+                Have a question, catering request, or feedback? Contact any of
+                our 3 branches directly or drop us a message below.
+              </p>
+            </div>
+
+            <div class="row g-5 align-items-start">
+              <!-- Left Column -->
+              <div class="col-12 col-lg-5 contact-gs-slide-left">
+                <!-- Email Card -->
+                <div
+                  class="d-flex align-items-center gap-3 mb-4 p-3 bg-white rounded border"
+                >
+                  <div
+                    class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                    style="width: 44px; height: 44px; flex-shrink: 0"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      fill="none"
+                      stroke="var(--clr-accent)"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <span
+                      class="small text-uppercase fw-bold text-secondary d-block"
+                      >Official Email</span
+                    >
+                    <a
+                      href="mailto:konkancurryseafoodrestaurant@gmail.com"
+                      class="fw-bold text-decoration-none text-dark text-break"
+                      >konkancurryseafoodrestaurant@gmail.com</a
+                    >
+                  </div>
+                </div>
+
+                <!-- Branch Contact Summary Cards -->
+                <div class="d-flex flex-column gap-3">
+                  <!-- Kopar Khairane -->
+                  <div class="p-3 bg-white rounded border">
+                    <h4
+                      class="h6 fw-bold text-uppercase mb-2"
+                      style="color: var(--clr-primary)"
+                    >
+                      Kopar Khairane
+                    </h4>
+                    <p class="small text-secondary mb-2">
+                      <strong>Phone:</strong>
+                      <a
+                        href="tel:9920461100"
+                        class="text-dark text-decoration-none fw-medium"
+                        >+91 99204 61100</a
+                      >
+                      |
+                      <a
+                        href="tel:9920462200"
+                        class="text-dark text-decoration-none fw-medium"
+                        >+91 99204 62200</a
+                      >
+                      |
+                      <a
+                        href="tel:9920463300"
+                        class="text-dark text-decoration-none fw-medium"
+                        >+91 99204 63300</a
+                      >
+                    </p>
+                    <div
+                      class="d-flex justify-content-between align-items-center border-top pt-2 mt-2"
+                    >
+                      <p class="small text-secondary mb-0">
+                        <strong>Hours:</strong> 11:00 AM &ndash; 12:00 AM
+                      </p>
+                      <div class="d-flex gap-2">
+                        <a
+                          href="https://share.google/70V8uC0zImnNrVqJ7"
+                          target="_blank"
+                          rel="noopener"
+                          class="btn btn-sm btn-light rounded-circle p-1 d-flex align-items-center justify-content-center"
+                          title="Google Maps Location"
+                          style="
+                            color: var(--clr-accent);
+                            width: 30px;
+                            height: 30px;
+                          "
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"
+                            ></path>
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                            ></path>
+                          </svg>
+                        </a>
+                        <a
+                          href="https://www.instagram.com/konkancurry_koparkhairne/"
+                          target="_blank"
+                          rel="noopener"
+                          class="btn btn-sm btn-light rounded-circle p-1 d-flex align-items-center justify-content-center"
+                          title="Instagram"
+                          style="
+                            color: var(--clr-accent);
+                            width: 30px;
+                            height: 30px;
+                          "
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            />
+                          </svg>
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61590713805383"
+                          target="_blank"
+                          rel="noopener"
+                          class="btn btn-sm btn-light rounded-circle p-1 d-flex align-items-center justify-content-center"
+                          title="Facebook"
+                          style="
+                            color: var(--clr-accent);
+                            width: 30px;
+                            height: 30px;
+                          "
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Kharghar -->
+                  <div class="p-3 bg-white rounded border">
+                    <h4
+                      class="h6 fw-bold text-uppercase mb-2"
+                      style="color: var(--clr-primary)"
+                    >
+                      Kharghar
+                    </h4>
+                    <p class="small text-secondary mb-2">
+                      <strong>Phone:</strong>
+                      <a
+                        href="tel:9833998500"
+                        class="text-dark text-decoration-none fw-medium"
+                        >+91 98339 98500</a
+                      >
+                      |
+                      <a
+                        href="tel:9833998600"
+                        class="text-dark text-decoration-none fw-medium"
+                        >+91 98339 98600</a
+                      >
+                      |
+                      <a
+                        href="tel:9833998700"
+                        class="text-dark text-decoration-none fw-medium"
+                        >+91 98339 98700</a
+                      >
+                    </p>
+                    <div
+                      class="d-flex justify-content-between align-items-center border-top pt-2 mt-2"
+                    >
+                      <p class="small text-secondary mb-0">
+                        <strong>Hours:</strong> 11:30 AM &ndash; 11:30 PM
+                      </p>
+                      <div class="d-flex gap-2">
+                        <a
+                          href="https://share.google/gmY2cc7AgcdLuxr6c"
+                          target="_blank"
+                          rel="noopener"
+                          class="btn btn-sm btn-light rounded-circle p-1 d-flex align-items-center justify-content-center"
+                          title="Google Maps Location"
+                          style="
+                            color: var(--clr-accent);
+                            width: 30px;
+                            height: 30px;
+                          "
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"
+                            ></path>
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                            ></path>
+                          </svg>
+                        </a>
+                        <a
+                          href="https://www.instagram.com/konkancurry_kharghar/"
+                          target="_blank"
+                          rel="noopener"
+                          class="btn btn-sm btn-light rounded-circle p-1 d-flex align-items-center justify-content-center"
+                          title="Instagram"
+                          style="
+                            color: var(--clr-accent);
+                            width: 30px;
+                            height: 30px;
+                          "
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            />
+                          </svg>
+                        </a>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61575475441714#"
+                          target="_blank"
+                          rel="noopener"
+                          class="btn btn-sm btn-light rounded-circle p-1 d-flex align-items-center justify-content-center"
+                          title="Facebook"
+                          style="
+                            color: var(--clr-accent);
+                            width: 30px;
+                            height: 30px;
+                          "
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Roadpali -->
+                  <div class="p-3 bg-white rounded border">
+                    <h4
+                      class="h6 fw-bold text-uppercase mb-2"
+                      style="color: var(--clr-primary)"
+                    >
+                      Roadpali
+                    </h4>
+                    <p class="small text-secondary mb-2">
+                      <strong>Phone:</strong>
+                      <a
+                        href="tel:+919152557070"
+                        class="text-dark text-decoration-none fw-medium"
+                        >+91 91525 57070</a
+                      >
+                      |
+                      <a
+                        href="tel:+919152337070"
+                        class="text-dark text-decoration-none fw-medium"
+                        >+91 91523 37070</a
+                      >
+                    </p>
+                    <div
+                      class="d-flex justify-content-between align-items-center border-top pt-2 mt-2"
+                    >
+                      <p class="small text-secondary mb-0">
+                        <strong>Hours:</strong> 11:00 AM &ndash; 12:00 AM
+                      </p>
+                      <div class="d-flex gap-2">
+                        <a
+                          href="https://share.google/g93vEU6Tm8DgZJNrN"
+                          target="_blank"
+                          rel="noopener"
+                          class="btn btn-sm btn-light rounded-circle p-1 d-flex align-items-center justify-content-center"
+                          title="Google Maps Location"
+                          style="
+                            color: var(--clr-accent);
+                            width: 30px;
+                            height: 30px;
+                          "
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"
+                            ></path>
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                            ></path>
+                          </svg>
+                        </a>
+                        <a
+                          href="https://www.instagram.com/konkancurry_seafoodrestaurant/"
+                          target="_blank"
+                          rel="noopener"
+                          class="btn btn-sm btn-light rounded-circle p-1 d-flex align-items-center justify-content-center"
+                          title="Instagram"
+                          style="
+                            color: var(--clr-accent);
+                            width: 30px;
+                            height: 30px;
+                          "
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            />
+                          </svg>
+                        </a>
+                        <a
+                          href="https://www.facebook.com/p/Konkan-Curry-Thali-Seafood-Restaurant-61586002104599/#"
+                          target="_blank"
+                          rel="noopener"
+                          class="btn btn-sm btn-light rounded-circle p-1 d-flex align-items-center justify-content-center"
+                          title="Facebook"
+                          style="
+                            color: var(--clr-accent);
+                            width: 30px;
+                            height: 30px;
+                          "
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Right Column: Form Component -->
+              <div class="col-12 col-lg-7 contact-gs-slide-right">
+                <div data-component-src="assets/components/form.html"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Frequently Asked Questions Section -->
+        <section class="py-5 py-lg-6 bg-white">
+          <div
+            class="container mx-auto px-4 max-w-4xl py-4 contact-gs-reveal-up"
+          >
+            <div class="text-center mb-5">
+              <h2
+                class="display-5 fw-bold"
+                style="
+                  font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                  color: var(--clr-primary);
+                "
+              >
+                Frequently Asked Questions
+              </h2>
+            </div>
+
+            <div class="accordion kc-accordion" id="faqAccordion">
+              <!-- FAQ 1 -->
+              <div class="accordion-item kc-accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="kc-faq-trigger fw-bold fs-5 text-dark"
+                    type="button"
+                  >
+                    Do I need a reservation?
+                  </button>
+                </h2>
+                <div id="faq1" class="kc-faq-content show">
+                  <div class="accordion-body text-secondary fs-6 lh-lg">
+                    While walk-ins are always welcome, we highly recommend
+                    making a reservation, especially for dinner and during
+                    weekends, to ensure you don't have to wait for a table.
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ 2 -->
+              <div class="accordion-item kc-accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="kc-faq-trigger collapsed fw-bold fs-5 text-dark"
+                    type="button"
+                  >
+                    Do you offer catering for private events?
+                  </button>
+                </h2>
+                <div id="faq2" class="kc-faq-content">
+                  <div class="accordion-body text-secondary fs-6 lh-lg">
+                    Yes, we offer premium catering services for corporate
+                    events, weddings, and private celebrations. Please use the
+                    inquiry form above to request our catering menu and
+                    packages.
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ 3 -->
+              <div class="accordion-item kc-accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="kc-faq-trigger collapsed fw-bold fs-5 text-dark"
+                    type="button"
+                  >
+                    Is private dining available?
+                  </button>
+                </h2>
+                <div id="faq3" class="kc-faq-content">
+                  <div class="accordion-body text-secondary fs-6 lh-lg">
+                    We have a dedicated private dining area that can accommodate
+                    up to 25 guests. It's perfect for intimate family gatherings
+                    or corporate dinners. Advance booking is required.
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ 4 -->
+              <div class="accordion-item kc-accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="kc-faq-trigger collapsed fw-bold fs-5 text-dark"
+                    type="button"
+                  >
+                    Do you have vegetarian and vegan options?
+                  </button>
+                </h2>
+                <div id="faq4" class="kc-faq-content">
+                  <div class="accordion-body text-secondary fs-6 lh-lg">
+                    Absolutely. While we are famous for our coastal seafood, our
+                    menu features an extensive selection of authentic vegetarian
+                    and vegan dishes prepared with the same care and traditional
+                    spices.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Interactive Location Map Section -->
+        <section
+          id="map-section"
+          class="pt-5 pt-lg-6 pb-0 bg-white overflow-hidden"
+        >
+          <div
+            class="container mx-auto px-4 max-w-6xl text-center mb-5 contact-gs-reveal-up"
+          >
+            <div
+              class="kc-hero-badge mb-4 mx-auto border-dark border-opacity-10 text-dark"
+              style="background: transparent"
+            >
+              <span class="kc-hero-badge__text">Find Us</span>
+            </div>
+            <h2
+              class="display-5 fw-bold mb-3"
+              style="
+                font-family: &quot;Roboto Condensed&quot;, sans-serif;
+                color: var(--clr-primary);
+              "
+            >
+              Located in the Heart of Navi Mumbai
+            </h2>
+            <p class="lead text-secondary mx-auto" style="max-width: 600px">
+              Conveniently situated in Kharghar. Ample parking available.
+            </p>
+          </div>
+          <div
+            class="w-100 contact-gs-scale-in"
+            style="height: 50vh; min-height: 450px; line-height: 0"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.835150993952!2d73.0645607153255!3d19.03050475850983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c216c0260383%3A0x868b446a2a5ff5f0!2sKharghar%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style="
+                border: 0;
+                filter: grayscale(10%) contrast(1.1);
+                display: block;
+              "
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </section>
+
+        <!-- 7. Final Reservation CTA Section -->
+        <section
+          class="py-5 py-lg-6 position-relative text-center overflow-hidden"
+        >
+          <div class="position-absolute top-0 start-0 w-100 h-100 z-0">
+            <img
+              src="assets/images/story-pattern.webp"
+              alt="Pattern"
+              class="w-100 h-100"
+              style="object-fit: cover; opacity: 0.1"
+            />
+            <div
+              class="position-absolute top-0 start-0 w-100 h-100"
+              style="background: var(--clr-primary); opacity: 0.95"
+            ></div>
+          </div>
+
+          <div
+            class="container mx-auto px-4 position-relative z-1 py-5 my-md-4"
+          >
+            <div
+              class="kc-hero-badge mb-4 mx-auto border-white border-opacity-25 contact-gs-reveal-up"
+              style="background: rgba(255, 255, 255, 0.05)"
+            >
+              <span class="kc-hero-badge__text text-white"
+                >Reserve Your Table</span
+              >
+            </div>
+            <h2
+              class="display-4 fw-bold text-white mb-4 contact-gs-reveal-up"
+              style="font-family: &quot;Roboto Condensed&quot;, sans-serif"
+            >
+              Experience Coastal Dining at Its Finest
+            </h2>
+            <p
+              class="lead text-white-50 mb-5 mx-auto contact-gs-reveal-up"
+              style="max-width: 600px"
+            >
+              Join us for an unforgettable culinary journey. Secure your table
+              today and let us take care of the rest.
+            </p>
+            <div
+              class="d-flex gap-4 justify-content-center flex-wrap contact-gs-reveal-up"
+            >
+              <a
+                class="kc-button text-primary bg-white hover:bg-white openReserveModalBtn"
+                href="#reservationModal"
+                style="border: 1px solid white"
+                >Reserve a Table</a
+              >
+              <a
+                class="kc-button kc-button--secondary text-white"
+                style="border: 1px solid rgba(255, 255, 255, 0.4)"
+                href="#kc-contact-form"
+                >Contact Us</a
+              >
+            </div>
+          </div>
         </section>
       </main>
 
       <div data-component-src="assets/components/footer.html"></div>
+      <!-- Dynamic Popup Component -->
+      <div data-component-src="assets/components/popup.html"></div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

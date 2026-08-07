@@ -1,0 +1,183 @@
+<!-- Reservation Modal -->
+<div class="kc-modal" id="reservationModal">
+  <div class="kc-modal__overlay" id="modalOverlay"></div>
+  <div class="kc-modal__container">
+    <button
+      class="kc-modal__close"
+      id="closeReserveModal"
+      aria-label="Close modal"
+    >
+      &times;
+    </button>
+    <div class="kc-modal__content">
+      <div class="kc-modal__visual">
+        <img
+          src="assets/images/Full_Course_Meal_Display_with_Branding.webp"
+          alt="Konkan Curry Dining"
+        />
+      </div>
+      <div class="kc-modal__form-wrapper">
+        <div class="kc-modal__header">
+          <h2 class="display-6 fw-bold text-primary mb-2">
+            Reserve Your Table
+          </h2>
+          <p class="text-secondary small">
+            Planning a visit? Secure your spot below.
+          </p>
+        </div>
+        <form class="kc-modal__form" id="kc-modal-reservation-form">
+          <div class="row g-3">
+            <!-- Full Name -->
+            <div class="col-12 col-md-6">
+              <label class="form-label small fw-bold text-uppercase"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <!-- Phone Number -->
+            <div class="col-12 col-md-6">
+              <label class="form-label small fw-bold text-uppercase"
+                >Phone Number</label
+              >
+              <input
+                type="tel"
+                class="form-control"
+                placeholder="Your Phone"
+                required
+              />
+            </div>
+            <!-- Email Address -->
+            <div class="col-12 col-md-6">
+              <label class="form-label small fw-bold text-uppercase"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <!-- Preferred Location -->
+            <div class="col-12 col-md-6">
+              <label class="form-label small fw-bold text-uppercase"
+                >Preferred Location</label
+              >
+              <select class="form-select form-control" required>
+                <option value="" disabled selected>Select Location</option>
+                <option value="Kopar Khairane">Kopar Khairane</option>
+                <option value="Kharghar">Kharghar</option>
+                <option value="Roadpali">Roadpali</option>
+              </select>
+            </div>
+            <!-- Number of Guests -->
+            <div class="col-12 col-md-6">
+              <label class="form-label small fw-bold text-uppercase"
+                >Number of Guests</label
+              >
+              <select class="form-select form-control" required>
+                <option value="" disabled selected>Select Guests</option>
+                <option value="2">2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4 People</option>
+                <option value="5">5 People</option>
+                <option value="6+">6+ People (Event)</option>
+              </select>
+            </div>
+            <!-- Preferred Date -->
+            <div class="col-12 col-md-6">
+              <label class="form-label small fw-bold text-uppercase"
+                >Preferred Date</label
+              >
+              <input type="date" name="booking_date" class="form-control" required />
+            </div>
+            <!-- Preferred Time -->
+            <div class="col-12 col-md-6">
+              <label class="form-label small fw-bold text-uppercase"
+                >Preferred Time</label
+              >
+              <select
+                class="form-select form-control kc-modal__time-select"
+                required
+              >
+                <option value="" disabled selected>Select Time</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="01:30 PM">01:30 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="02:30 PM">02:30 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="03:30 PM">03:30 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="04:30 PM">04:30 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+                <option value="05:30 PM">05:30 PM</option>
+                <option value="06:00 PM">06:00 PM</option>
+                <option value="06:30 PM">06:30 PM</option>
+                <option value="07:00 PM">07:00 PM</option>
+                <option value="07:30 PM">07:30 PM</option>
+                <option value="08:00 PM">08:00 PM</option>
+                <option value="08:30 PM">08:30 PM</option>
+                <option value="09:00 PM">09:00 PM</option>
+                <option value="09:30 PM">09:30 PM</option>
+                <option value="10:00 PM">10:00 PM</option>
+                <option value="10:30 PM">10:30 PM</option>
+                <option value="11:00 PM">11:00 PM</option>
+                <option value="11:30 PM">11:30 PM</option>
+              </select>
+            </div>
+            <!-- Inquiry Type -->
+            <div class="col-12 col-md-6">
+              <label class="form-label small fw-bold text-uppercase"
+                >Inquiry Type</label
+              >
+              <select class="form-select form-control" required>
+                <option value="" disabled selected>Select Inquiry Type</option>
+                <option value="reservation">Table Reservation</option>
+                <option value="private_event">Private Event</option>
+                <option value="corporate">Corporate Catering</option>
+                <option value="general">General Question</option>
+              </select>
+            </div>
+            <!-- Special Requests -->
+            <div class="col-12">
+              <label class="form-label small fw-bold text-uppercase"
+                >Message or Special Requests</label
+              >
+              <textarea
+                class="form-control"
+                rows="6"
+                placeholder="Any dietary requirements or special occasions?"
+              ></textarea>
+            </div>
+            <!-- Submit Button & Success Alert -->
+            <div class="col-12 pt-2">
+              <button
+                type="submit"
+                class="kc-button kc-button--primary w-100 py-3"
+              >
+                Make Reservation
+              </button>
+              <div
+                id="kc-modal-success-msg"
+                class="alert alert-success mt-3 d-none mb-0 text-center"
+                role="alert"
+              >
+                Thank you! Your reservation request has been received. We will
+                call you to confirm.
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
