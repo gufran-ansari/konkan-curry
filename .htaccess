@@ -1,0 +1,47 @@
+# ==============================================================================
+# Konkan Curry — Apache .htaccess Configuration
+# Clean URLs (Removes .html Extension) & Performance Optimization
+# ==============================================================================
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# ------------------------------------------------------------------------------
+# 1. Redirect external requests with .html extension to clean URLs (301 Redirect)
+#    Example: /about.html -> /about | /location/kharghar.html -> /location/kharghar
+# ------------------------------------------------------------------------------
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# ------------------------------------------------------------------------------
+# 2. Internally rewrite extensionless requests to the .html file
+#    Example: /about -> serves /about.html | /locations -> serves /locations.html
+# ------------------------------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L,QSA]
+
+# ------------------------------------------------------------------------------
+# 3. Default Index & 404 Fallback
+# ------------------------------------------------------------------------------
+DirectoryIndex index.html
+ErrorDocument 404 /index.html
+
+# ------------------------------------------------------------------------------
+# 4. Enable Gzip Compression
+# ------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 5. Leverage Browser Caching
+# ------------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
