@@ -3,23 +3,28 @@
 # Clean URLs (Removes .html Extension) & Performance Optimization
 # ==============================================================================
 
+# Disable MultiViews to prevent Apache auto-matching conflicts
+Options -MultiViews
+
 # Enable Rewrite Engine
 RewriteEngine On
+RewriteBase /
 
 # ------------------------------------------------------------------------------
 # 1. Redirect external requests with .html extension to clean URLs (301 Redirect)
 #    Example: /about.html -> /about | /location/kharghar.html -> /location/kharghar
 # ------------------------------------------------------------------------------
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /+(.+?)\.html[\s?] [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
 
 # ------------------------------------------------------------------------------
-# 2. Internally rewrite extensionless requests to the .html file
+# 2. Internally rewrite extensionless requests to the corresponding .html file
 #    Example: /about -> serves /about.html | /locations -> serves /locations.html
 # ------------------------------------------------------------------------------
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [L,QSA]
+RewriteRule ^(.+)$ $1.html [L,QSA]
 
 # ------------------------------------------------------------------------------
 # 3. Default Index & 404 Fallback
