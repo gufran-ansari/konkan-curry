@@ -5,9 +5,38 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   });
 }
 
+async function fetchComponentHtml(rawSrc, isSubfolder) {
+  const filename = rawSrc.split("/").pop();
+  const candidates = [
+    rawSrc,
+    "assets/components/" + filename,
+    "/assets/components/" + filename,
+    "../assets/components/" + filename,
+    "../../assets/components/" + filename,
+  ];
+
+  for (const path of candidates) {
+    try {
+      const res = await fetch(path, { cache: "no-cache" });
+      if (res.ok) {
+        return await res.text();
+      }
+    } catch (err) {
+      // Try next fallback path
+    }
+  }
+  return null;
+}
+
 async function loadHtmlComponents() {
   const slots = Array.from(document.querySelectorAll("[data-component-src]"));
   if (!slots.length) return;
+
+  const hasBaseTag = !!document.querySelector('base[href="/"]');
+  const isSubfolder =
+    !hasBaseTag &&
+    (document.body.classList.contains("page-location") ||
+      /\/location(\/|$)/i.test(window.location.pathname));
 
   await Promise.all(
     slots.map(async (slot) => {
@@ -15,16 +44,12 @@ async function loadHtmlComponents() {
       if (!src) return;
 
       try {
-        const response = await fetch(src, { cache: "no-cache" });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        let html = await fetchComponentHtml(src, isSubfolder);
+        if (!html) throw new Error(`HTTP fetch failed for all candidate paths of ${src}`);
 
-        let html = await response.text();
-        const needsParentPrefix =
-          src.startsWith("../") || window.location.pathname.includes("/location/");
-
-        if (needsParentPrefix) {
+        if (isSubfolder) {
           html = html.replace(
-            /\b(href|src)="(?!https?:|mailto:|tel:|\/|#|javascript:)([^"]+)"/g,
+            /\b(href|src)="(?!https?:|mailto:|tel:|\/|#|javascript:|\.\.\/)([^"]+)"/g,
             '$1="../$2"'
           );
         }
@@ -1222,6 +1247,7 @@ function bootKonkanCurryPage() {
 
       // Wire up all booking/contact forms (reCAPTCHA + SMTP backend)
       kc_initForms();
+      initRecaptchaWidgets();
       
       // Restrict date inputs to today + 1 month
       initDateInputRestrictions();
@@ -1355,17 +1381,22 @@ function initAboutAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
   // Hero Animation
-  const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-  
-  gsap.set('[data-reveal-hero] > *', { opacity: 0, y: 40 });
-  gsap.set('.about-hero__bg img', { scale: 1.05 });
+  const heroElements = document.querySelectorAll('[data-reveal-hero] > *');
+  if (heroElements.length) {
+    gsap.set(heroElements, { opacity: 0, y: 30 });
+    gsap.to(heroElements, {
+      opacity: 1,
+      y: 0,
+      duration: 0.9,
+      stagger: 0.15,
+      ease: 'power3.out'
+    });
+  }
 
-  heroTl.to('.about-hero__bg img', { scale: 1, duration: 2.5, ease: 'power2.out' })
-        .to('[data-reveal-hero] .kc-badge', { opacity: 1, y: 0, duration: 0.8 }, "-=1.8")
-        .to('[data-reveal-hero] .about-hero__title', { opacity: 1, y: 0, duration: 1 }, "-=1.4")
-        .to('[data-reveal-hero] .about-hero__desc', { opacity: 1, y: 0, duration: 1 }, "-=1")
-        .to('[data-reveal-hero] .kc-button', { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }, "-=0.6")
-        .from('.about-scroll-indicator', { opacity: 0, y: 20, duration: 1 }, "-=0.4");
+  const heroBgImg = document.querySelector('.about-hero__bg img, .kc-hero-section__bg img');
+  if (heroBgImg) {
+    gsap.fromTo(heroBgImg, { scale: 1.08 }, { scale: 1, duration: 2.2, ease: 'power2.out' });
+  }
 
   // Generic Reveal Animations
   document.querySelectorAll('[data-reveal]').forEach(el => {
@@ -1716,7 +1747,9 @@ function initContactAnimations() {
       ease: "power3.out",
       scrollTrigger: {
         trigger: slideLeft,
-        start: "top 80%"
+        start: "top 95%",
+        toggleActions: "play none none none",
+        once: true
       }
     });
     
@@ -1727,7 +1760,9 @@ function initContactAnimations() {
       ease: "power3.out",
       scrollTrigger: {
         trigger: slideRight,
-        start: "top 80%"
+        start: "top 95%",
+        toggleActions: "play none none none",
+        once: true
       }
     });
   }
@@ -1742,7 +1777,9 @@ function initContactAnimations() {
       ease: "power3.out",
       scrollTrigger: {
         trigger: mapElement,
-        start: "top 85%"
+        start: "top 95%",
+        toggleActions: "play none none none",
+        once: true
       }
     });
   }
@@ -1757,10 +1794,29 @@ function initContactAnimations() {
       ease: "power3.out",
       scrollTrigger: {
         trigger: el,
-        start: "top 85%"
+        start: "top 95%",
+        toggleActions: "play none none none",
+        once: true
       }
     });
   });
+
+  // Safety fallback: if any contact-gs-* elements are still invisible after 1.5s
+  // (e.g. ScrollTrigger failed to fire), force them visible
+  setTimeout(() => {
+    const allContactGs = document.querySelectorAll(
+      '.contact-gs-reveal-up, .contact-gs-slide-left, .contact-gs-slide-right, .contact-gs-scale-in, .contact-gs-stagger'
+    );
+    allContactGs.forEach(el => {
+      const computed = window.getComputedStyle(el);
+      if (parseFloat(computed.opacity) < 0.1) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      }
+    });
+    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+  }, 1500);
 
   // 6. FAQ Accordion Logic (GSAP)
   initFaqAccordion();
@@ -2000,18 +2056,22 @@ function initLocationAnimations() {
 /**
  * kc_initForms — handles all [data-kc-form] forms on the site.
  * - Collects all named fields (including reCAPTCHA token)
- * - POSTs as JSON to backend/submit.php (or ../backend/submit.php from /location/ pages)
+ * - POSTs as JSON to backend/submit.php (with resilient relative fallbacks)
  * - Shows inline success / error messages via .kc-form-status
  */
 function kc_initForms() {
   const forms = document.querySelectorAll('[data-kc-form]');
   if (!forms.length) return;
 
-  // Resolve the correct backend path (root pages vs /location/ sub-pages)
   const isSubPage = window.location.pathname.includes('/location/');
-  const backendUrl = isSubPage ? '../backend/submit.php' : 'backend/submit.php';
+  const backendCandidates = isSubPage
+    ? ['../../backend/submit.php', '../backend/submit.php', 'backend/submit.php', '/backend/submit.php']
+    : ['backend/submit.php', '../backend/submit.php', '/backend/submit.php'];
 
   forms.forEach(function (form) {
+    if (form.dataset.kcInitialized === 'true') return;
+    form.dataset.kcInitialized = 'true';
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
@@ -2044,81 +2104,142 @@ function kc_initForms() {
         }
       }
 
-      // Validate reCAPTCHA (skipped on localhost for easy local testing)
-      const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-      const recaptchaEl = form.querySelector('.g-recaptcha');
-      if (recaptchaEl && !isLocalhost) {
-        const token = grecaptcha.getResponse(
-          recaptchaEl.dataset.widgetId !== undefined
-            ? recaptchaEl.dataset.widgetId
-            : undefined
-        );
-        if (!token) {
-          if (statusEl) {
-            statusEl.textContent = 'Please complete the reCAPTCHA check.';
-            statusEl.style.color = '#c0392b';
-          }
-          return;
-        }
-      }
-
       // Collect all named fields
       const data = {};
       new FormData(form).forEach(function (value, key) {
         data[key] = value;
       });
 
-      // Add reCAPTCHA token manually (FormData already picks it up via g-recaptcha-response)
-
       // Disable button while submitting
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.dataset.origText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending…';
+        if (!submitBtn.dataset.origText) {
+          submitBtn.dataset.origText = submitBtn.textContent;
+        }
+        submitBtn.textContent = (form.id === 'kc-contact-form') ? 'Sending…' : 'Booking…';
       }
       if (statusEl) {
         statusEl.textContent = '';
         statusEl.style.color = '';
       }
 
-      try {
-        const res = await fetch(backendUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
+      // Automatically capture the current page URL
+      data['page_url'] = window.location.href;
 
-        const json = await res.json();
-
-        if (json.ok) {
-          if (statusEl) {
-            statusEl.textContent = json.message || 'Thank you! We will call you shortly to confirm.';
-            statusEl.style.color = '#2e7d32';
-          }
-          form.reset();
-          // Reset reCAPTCHA widget after successful submission
-          if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
-        } else {
-          if (statusEl) {
-            statusEl.textContent = json.message || 'Something went wrong. Please try again.';
-            statusEl.style.color = '#c0392b';
-          }
-          if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
-        }
-      } catch (err) {
+      // Execute reCAPTCHA v3 (Invisible security token generation)
+      const token = await getRecaptchaToken();
+      if (token && token !== 'localhost_bypass') {
+        data['g-recaptcha-response'] = token;
+      } else if (!isLocalhost && !token) {
         if (statusEl) {
-          statusEl.textContent = 'Network error. Please check your connection and try again.';
+          statusEl.textContent = 'Security check initialization in progress. Please click Make Reservation again.';
           statusEl.style.color = '#c0392b';
         }
-        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
-      } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.textContent = submitBtn.dataset.origText || 'Submit';
         }
+        return;
+      }
+
+      let json = null;
+      let fetchSuccess = false;
+      let serverErrorMsg = '';
+
+      for (const backendUrl of backendCandidates) {
+        try {
+          const res = await fetch(backendUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(data),
+          });
+
+          // If 404, fallback to next URL candidate
+          if (res.status === 404 && backendUrl !== backendCandidates[backendCandidates.length - 1]) {
+            continue;
+          }
+
+          const rawText = await res.text();
+          try {
+            json = JSON.parse(rawText);
+          } catch (parseErr) {
+            console.error('Server returned non-JSON response from ' + backendUrl + ':', rawText);
+            serverErrorMsg = 'Server response error. Please try again.';
+          }
+
+          fetchSuccess = true;
+          break;
+        } catch (netErr) {
+          console.warn('Fetch attempt failed on ' + backendUrl + ':', netErr);
+        }
+      }
+
+      if (fetchSuccess && json && json.ok) {
+        if (statusEl) {
+          statusEl.textContent = json.message || 'Thank you! We will call you shortly to confirm.';
+          statusEl.style.color = '#2e7d32';
+        }
+        form.reset();
+      } else {
+        if (statusEl) {
+          statusEl.textContent = (json && json.message) || serverErrorMsg || 'Network error. Please check your connection and try again.';
+          statusEl.style.color = '#c0392b';
+        }
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitBtn.dataset.origText || 'Submit';
       }
     });
   });
+}
+
+/**
+ * Automatically loads Google reCAPTCHA v3 API and gets verification token
+ */
+async function getRecaptchaToken() {
+  const siteKey = '6LcqWpstAAAAAE6nfHwC53IIHLj-NhkeAB6vNbtK';
+  const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  if (isLocalhost) return 'localhost_bypass';
+
+  if (typeof grecaptcha === 'undefined' && !document.getElementById('recaptcha-api-script')) {
+    const script = document.createElement('script');
+    script.id = 'recaptcha-api-script';
+    script.src = 'https://www.google.com/recaptcha/api.js?render=' + siteKey;
+    document.head.appendChild(script);
+  }
+
+  for (let i = 0; i < 40; i++) {
+    if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.execute === 'function') break;
+    await new Promise((r) => setTimeout(r, 100));
+  }
+
+  if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.execute === 'function') {
+    return new Promise((resolve) => {
+      try {
+        grecaptcha.ready(function () {
+          grecaptcha.execute(siteKey, { action: 'submit' }).then(function (token) {
+            resolve(token || '');
+          }).catch(function (e) {
+            console.error('reCAPTCHA execution error:', e);
+            resolve('');
+          });
+        });
+      } catch (err) {
+        console.error('reCAPTCHA ready error:', err);
+        resolve('');
+      }
+    });
+  }
+  return '';
+}
+
+function initRecaptchaWidgets() {
+  getRecaptchaToken();
 }
 
 

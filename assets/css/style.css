@@ -1,3 +1,5 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
 html {
   scroll-behavior: auto !important;
   width: 100%;
@@ -823,8 +825,62 @@ body.menu-open {
   color: var(--clr-primary) !important;
 }
 
-/* --- SCROLL NARRATIVE + USP HYBRID --- */
 /* --- INTRO STORY SECTION --- */
+.kc-intro-story,
+#intro-story,
+#brand-story {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+.kc-intro-story .kc-story__container,
+.kc-intro-story > .container,
+.kc-intro-story > div:first-child,
+#intro-story > .container,
+#intro-story > div:first-child,
+#brand-story > .container,
+#brand-story .kc-story__container {
+  width: 75% !important;
+  max-width: 75% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 1024px) {
+  .kc-intro-story .kc-story__container,
+  .kc-intro-story > .container,
+  .kc-intro-story > div:first-child,
+  #intro-story > .container,
+  #intro-story > div:first-child,
+  #brand-story > .container,
+  #brand-story .kc-story__container {
+    width: 85% !important;
+    max-width: 85% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .kc-intro-story,
+  #intro-story,
+  #brand-story {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .kc-intro-story .kc-story__container,
+  .kc-intro-story > .container,
+  .kc-intro-story > div:first-child,
+  #intro-story > .container,
+  #intro-story > div:first-child,
+  #brand-story > .container,
+  #brand-story .kc-story__container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
 .kc-story__label span {
   position: relative;
   display: inline-block;
@@ -1016,14 +1072,14 @@ body.menu-open {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  padding-top: 8rem;
-  padding-bottom: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .kc-about-marquee {
-    padding-top: 10rem;
-    padding-bottom: 6rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 }
 
@@ -1793,9 +1849,12 @@ body.menu-open {
 }
 
 /* --- LOCATION + RESERVATION FUSION --- */
-.kc-reserve {
+.kc-reserve,
+#reserve {
   background-color: var(--bg-primary);
-  min-height: 100vh;
+  min-height: auto !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
 
 .kc-reserve__map-col {
@@ -1860,6 +1919,8 @@ body.menu-open {
 
 .kc-reserve__content-col,
 .kc-reserve__form-col {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
   background-image: radial-gradient(
     circle at center,
     rgba(197, 168, 128, 0.03) 0%,
@@ -2235,6 +2296,14 @@ body.menu-open {
   }
 }
 /* Visit Essentials Improvements */
+.kc-essentials,
+#essentials {
+  background-color: #0c0b0b !important;
+  color: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+}
+
 .kc-essential-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2581,6 +2650,52 @@ body.menu-open {
   transform: none !important;
   opacity: 1 !important;
   display: block !important;
+}
+
+/* ==========================================================================
+   ABOUT PAGE UNIFORM SECTION PADDING (Equal to "Who We Are")
+   ========================================================================== */
+.page-about #brand-story,
+.page-about #philosophy,
+.page-about #chef-spotlight,
+.page-about #why-us,
+.page-about #gallery,
+.page-about .kc-about-marquee,
+.page-about #milestones,
+.page-about #cta,
+.page-about .cta-parallax {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+@media (max-width: 991px) {
+  .page-about #brand-story,
+  .page-about #philosophy,
+  .page-about #chef-spotlight,
+  .page-about #why-us,
+  .page-about #gallery,
+  .page-about .kc-about-marquee,
+  .page-about #milestones,
+  .page-about #cta,
+  .page-about .cta-parallax {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-about #brand-story,
+  .page-about #philosophy,
+  .page-about #chef-spotlight,
+  .page-about #why-us,
+  .page-about #gallery,
+  .page-about .kc-about-marquee,
+  .page-about #milestones,
+  .page-about #cta,
+  .page-about .cta-parallax {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
 }
 
 /* Philosophy Cards */
@@ -3304,6 +3419,12 @@ body.menu-open {
   color: #fff;
 }
 
+.kc-loc-hero .kc-breadcrumb {
+  justify-content: flex-start !important;
+  margin-bottom: 1rem !important;
+  text-align: start !important;
+}
+
 
 /* =========================================
    CONTACT PAGE STYLES
@@ -3794,7 +3915,7 @@ html.modal-open {
 .menu-hero__content,
 .kc-loc-hero__content {
   width: 100% !important;
-  max-width: 1150px !important;
+  max-width: 1366px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   padding-left: 2rem !important;
@@ -3818,12 +3939,11 @@ html.modal-open {
   margin-right: auto !important;
 }
 
-/* 65vh Height for All Pages EXCEPT Home Page */
+/* 65vh Height for Inner Pages EXCEPT Home Page and Single Location Pages */
 .page-about .about-hero,
 .page-menu .menu-hero,
 .page-location .kc-hero-section,
-.page-contact .kc-hero-section,
-.page-location .kc-loc-hero {
+.page-contact .kc-hero-section {
   height: 65vh !important;
   min-height: 480px !important;
   max-height: 700px !important;
@@ -3832,6 +3952,113 @@ html.modal-open {
   justify-content: center !important;
   position: relative !important;
   overflow: hidden !important;
+}
+
+/* Location Single Page 100vh 2-Column Split Hero */
+.kc-loc-hero {
+  min-height: 100vh !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  padding-top: calc(var(--header-height, 90px) + 2rem) !important;
+  padding-bottom: 3.5rem !important;
+  background-color: #111111;
+}
+
+.kc-loc-hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.kc-loc-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.kc-loc-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 15, 0.92) 0%,
+    rgba(25, 20, 18, 0.85) 50%,
+    rgba(15, 15, 15, 0.88) 100%
+  );
+  z-index: 2;
+}
+
+.kc-loc-hero__content {
+  position: relative;
+  z-index: 3;
+}
+
+.kc-loc-hero__left {
+  color: #ffffff;
+}
+
+.kc-loc-hero__card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  text-align: left !important;
+}
+
+.kc-loc-hero__card form,
+.kc-loc-hero__card .form-label,
+.kc-loc-hero__card h2,
+.kc-loc-hero__card p,
+.kc-loc-hero__card .kc-form-status {
+  text-align: left !important;
+}
+
+.kc-loc-hero__card .form-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  margin-bottom: 0.25rem;
+  text-align: left !important;
+}
+
+.kc-loc-hero__card .form-control,
+.kc-loc-hero__card .form-select {
+  font-size: 0.875rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+  background-color: #ffffff;
+  text-align: left !important;
+}
+
+.kc-loc-hero__card .form-control:focus,
+.kc-loc-hero__card .form-select:focus {
+  border-color: var(--clr-accent, #cf3719);
+  box-shadow: 0 0 0 3px rgba(207, 55, 25, 0.15);
+}
+
+/* Location Branch Overview Image (4:5 Aspect Ratio) */
+.kc-branch-overview-img {
+  aspect-ratio: 4 / 5 !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  height: auto !important;
 }
 
 /* Menu Preview (Teaser) Spacing Reduction */
@@ -3855,36 +4082,56 @@ html.modal-open {
   padding-top: 0 !important;
 }
 
+/* Utilities */
+.text-accent {
+  color: var(--clr-accent, #cf3719) !important;
+}
+
 /* Footer Social & Map Icon Buttons */
 .kc-social-map-btn,
 .kc-social-btn {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: transparent;
-  color: var(--clr-accent) !important;
-  border: 1px solid var(--clr-accent);
+  background-color: transparent;
+  color: var(--clr-accent, #cf3719) !important;
+  border: 1.5px solid var(--clr-accent, #cf3719);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  font-size: 15px;
+  line-height: 1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
 .kc-social-map-btn:hover,
-.kc-social-btn:hover {
-  background: var(--clr-accent) !important;
+.kc-social-map-btn:focus-visible,
+.kc-social-btn:hover,
+.kc-social-btn:focus-visible {
+  background-color: var(--clr-accent, #cf3719) !important;
   color: #ffffff !important;
-  border-color: var(--clr-accent);
+  border-color: var(--clr-accent, #cf3719) !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(207, 55, 25, 0.25);
+  box-shadow: 0 4px 12px rgba(207, 55, 25, 0.3);
 }
 
 .kc-social-map-btn i,
 .kc-social-btn i {
-  color: inherit !important;
-  font-size: 16px;
+  color: var(--clr-accent, #cf3719);
+  font-size: 15px;
+  line-height: 1;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.kc-social-map-btn:hover i,
+.kc-social-map-btn:focus-visible i,
+.kc-social-btn:hover i,
+.kc-social-btn:focus-visible i {
+  color: #ffffff !important;
 }
 
 /* ==========================================================================
@@ -4043,3 +4290,4 @@ html, body {
     font-size: 0.78rem !important;
   }
 }
+

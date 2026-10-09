@@ -1,11 +1,14 @@
 <div class="contact-form-card bg-white p-4 p-md-5 rounded">
-  <form id="kc-contact-form">
+  <form id="kc-contact-form" data-kc-form>
+    <input type="hidden" name="form_name" value="contact" />
+    <input type="hidden" name="page_url" value="" />
     <div class="row g-4">
       <!-- Full Name -->
       <div class="col-12 col-md-6">
         <label class="form-label fw-bold kc-form-label">Full Name</label>
         <input
           type="text"
+          name="full_name"
           class="form-control form-control-lg kc-input"
           placeholder="Your Name"
           required
@@ -17,6 +20,7 @@
         <label class="form-label fw-bold kc-form-label">Phone Number</label>
         <input
           type="tel"
+          name="phone"
           class="form-control form-control-lg kc-input"
           placeholder="Your Phone"
           required
@@ -28,6 +32,7 @@
         <label class="form-label fw-bold kc-form-label">Email Address</label>
         <input
           type="email"
+          name="email"
           class="form-control form-control-lg kc-input"
           placeholder="Your Email"
           required
@@ -39,7 +44,7 @@
         <label class="form-label fw-bold kc-form-label"
           >Preferred Location</label
         >
-        <select class="form-select form-select-lg kc-input" required>
+        <select class="form-select form-select-lg kc-input" name="location" required>
           <option value="" disabled selected>Select Location</option>
           <option value="Kharghar">Kharghar</option>
           <option value="Kopar Khairane">Kopar Khairane</option>
@@ -52,6 +57,7 @@
         <label class="form-label fw-bold kc-form-label">Message</label>
         <textarea
           class="form-control kc-input"
+          name="message"
           rows="5"
           placeholder="Write your message or inquiry here..."
           required
@@ -59,22 +65,15 @@
       </div>
 
       <!-- Submit Button & Success Message -->
-      <div class="col-12 pt-3">
+      <div class="col-12 pt-2">
         <button
           type="submit"
           class="kc-button kc-button--primary w-100 text-white border-0 py-3 d-flex justify-content-center"
         >
           Send Message
         </button>
-        <!-- Success Message Container -->
-        <div
-          id="kc-form-success-msg"
-          class="alert alert-success mt-3 d-none mb-0 text-center"
-          role="alert"
-        >
-          Thank you! Your message has been sent. We will get back to you
-          shortly.
-        </div>
+        <!-- Status Message Container -->
+        <div class="kc-form-status mt-3 text-center small" style="min-height: 1.25rem;"></div>
       </div>
     </div>
   </form>

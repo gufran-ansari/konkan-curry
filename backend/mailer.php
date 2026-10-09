@@ -94,12 +94,23 @@ function kc_send_mail(array $cfg, string $formName, array $fields, ?string $repl
 
     try {
         $mail->isSMTP();
+        $mail->SMTPDebug  = SMTP::DEBUG_OFF;
+        $mail->Timeout    = 15;
         $mail->Host       = $s['host'];
         $mail->SMTPAuth   = true;
         $mail->Username   = $s['username'];
         $mail->Password   = $s['password'];
         $mail->Port       = (int)$s['port'];
         $mail->CharSet    = 'UTF-8';
+
+        // SSL options for local / Windows XAMPP environments
+        $mail->SMTPOptions = [
+            'ssl' => [
+                'verify_peer'       => false,
+                'verify_peer_name'  => false,
+                'allow_self_signed' => true,
+            ],
+        ];
 
         if ($s['encryption'] === 'ssl') {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
@@ -115,7 +126,7 @@ function kc_send_mail(array $cfg, string $formName, array $fields, ?string $repl
         }
 
         $mail->isHTML(true);
-        $mail->Subject = 'New ' . ucfirst($formName) . ' — Konkan Curry';
+        $mail->Subject = 'New ' . $formName . ' — Konkan Curry';
         $mail->Body    = kc_build_email_html($formName, $fields, $s['logo_url'] ?? '');
         $mail->AltBody = kc_build_email_plain($formName, $fields);
 

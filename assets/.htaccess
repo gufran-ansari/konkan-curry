@@ -1,0 +1,4 @@
+# Disable all rewrite rules inside /assets/ so all static components, CSS, JS, and images are served directly without any redirects
+<IfModule mod_rewrite.c>
+    RewriteEngine Off
+</IfModule>

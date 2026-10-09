@@ -25,7 +25,9 @@
             Planning a visit? Secure your spot below.
           </p>
         </div>
-        <form class="kc-modal__form" id="kc-modal-reservation-form">
+        <form class="kc-modal__form" id="kc-modal-reservation-form" data-kc-form>
+          <input type="hidden" name="form_name" value="modal_reservation" />
+          <input type="hidden" name="page_url" value="" />
           <div class="row g-3">
             <!-- Full Name -->
             <div class="col-12 col-md-6">
@@ -34,6 +36,7 @@
               >
               <input
                 type="text"
+                name="full_name"
                 class="form-control"
                 placeholder="Your Name"
                 required
@@ -46,6 +49,7 @@
               >
               <input
                 type="tel"
+                name="phone"
                 class="form-control"
                 placeholder="Your Phone"
                 required
@@ -58,6 +62,7 @@
               >
               <input
                 type="email"
+                name="email"
                 class="form-control"
                 placeholder="Your Email"
                 required
@@ -68,7 +73,7 @@
               <label class="form-label small fw-bold text-uppercase"
                 >Preferred Location</label
               >
-              <select class="form-select form-control" required>
+              <select class="form-select form-control" name="location" required>
                 <option value="" disabled selected>Select Location</option>
                 <option value="Kopar Khairane">Kopar Khairane</option>
                 <option value="Kharghar">Kharghar</option>
@@ -80,7 +85,7 @@
               <label class="form-label small fw-bold text-uppercase"
                 >Number of Guests</label
               >
-              <select class="form-select form-control" required>
+              <select class="form-select form-control" name="guests" required>
                 <option value="" disabled selected>Select Guests</option>
                 <option value="2">2 People</option>
                 <option value="3">3 People</option>
@@ -103,6 +108,7 @@
               >
               <select
                 class="form-select form-control kc-modal__time-select"
+                name="booking_time"
                 required
               >
                 <option value="" disabled selected>Select Time</option>
@@ -139,7 +145,7 @@
               <label class="form-label small fw-bold text-uppercase"
                 >Inquiry Type</label
               >
-              <select class="form-select form-control" required>
+              <select class="form-select form-control" name="inquiry_type" required>
                 <option value="" disabled selected>Select Inquiry Type</option>
                 <option value="reservation">Table Reservation</option>
                 <option value="private_event">Private Event</option>
@@ -154,6 +160,7 @@
               >
               <textarea
                 class="form-control"
+                name="message"
                 rows="6"
                 placeholder="Any dietary requirements or special occasions?"
               ></textarea>
@@ -167,13 +174,9 @@
                 Make Reservation
               </button>
               <div
-                id="kc-modal-success-msg"
-                class="alert alert-success mt-3 d-none mb-0 text-center"
-                role="alert"
-              >
-                Thank you! Your reservation request has been received. We will
-                call you to confirm.
-              </div>
+                class="kc-form-status mt-3 text-center small"
+                style="min-height: 1.25rem;"
+              ></div>
             </div>
           </div>
         </form>

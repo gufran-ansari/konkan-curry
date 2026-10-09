@@ -13,6 +13,10 @@
 
 declare(strict_types=1);
 
+ini_set('display_errors', '0');
+error_reporting(E_ALL);
+ob_start();
+
 $cfg = require __DIR__ . '/config.php';
 
 /* ---------- CORS + JSON headers ---------- */
@@ -30,8 +34,11 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') {
 
 function kc_respond(int $code, array $payload): void
 {
+    while (ob_get_level() > 0) {
+        ob_end_clean();
+    }
     http_response_code($code);
-    echo json_encode($payload);
+    echo json_encode($payload, JSON_UNESCAPED_UNICODE);
     exit;
 }
 
@@ -74,6 +81,7 @@ $bDate    = kc_pick($data, ['booking_date', 'date']);
 $bTime    = kc_pick($data, ['booking_time', 'time']);
 $guests   = kc_pick($data, ['guests', 'people', 'pax']);
 $message  = kc_pick($data, ['message', 'notes', 'msg']);
+$pageUrl  = kc_pick($data, ['page_url', 'pageUrl', 'url']) ?? ($_SERVER['HTTP_REFERER'] ?? null);
 
 /* ---------- Validation ---------- */
 $errors = [];
@@ -90,29 +98,40 @@ if ($errors) {
     kc_respond(422, ['ok' => false, 'message' => 'Please check the form.', 'errors' => $errors]);
 }
 
-/* ---------- reCAPTCHA (if enabled) ---------- */
+/* ---------- reCAPTCHA v3 (if enabled) ---------- */
 if (!empty($cfg['recaptcha']['enabled'])) {
     $token = kc_pick($data, ['g-recaptcha-response', 'recaptcha_token', 'recaptcha']);
     if (!$token) {
-        kc_respond(422, ['ok' => false, 'message' => 'Please complete the reCAPTCHA.']);
+        kc_respond(422, ['ok' => false, 'message' => 'Security check token missing. Please refresh and try again.']);
     }
-    $verify = @file_get_contents(
-        'https://www.google.com/recaptcha/api/siteverify?' . http_build_query([
+
+    $ch = curl_init('https://www.google.com/recaptcha/api/siteverify');
+    curl_setopt_array($ch, [
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => http_build_query([
             'secret'   => $cfg['recaptcha']['secret_key'],
             'response' => $token,
             'remoteip' => $_SERVER['REMOTE_ADDR'] ?? '',
-        ])
-    );
+        ]),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT        => 10,
+        CURLOPT_SSL_VERIFYPEER => false,
+    ]);
+    $verify = curl_exec($ch);
+    curl_close($ch);
+
     $result = json_decode($verify ?: '{}', true);
     if (empty($result['success'])) {
-        kc_respond(422, ['ok' => false, 'message' => 'reCAPTCHA verification failed. Please try again.']);
+        error_log('[KC booking] reCAPTCHA verification failed: ' . json_encode($result));
+        kc_respond(422, ['ok' => false, 'message' => 'Security verification failed. Please try again.']);
     }
 }
 
 /* ---------- Collect any extra custom fields (future-proofing) ---------- */
 $known = ['form_name','form','full_name','name','fullName','email','phone','mobile','tel',
           'location','branch','booking_date','date','booking_time','time','guests','people',
-          'pax','message','notes','msg','company','g-recaptcha-response','recaptcha_token','recaptcha'];
+          'pax','message','notes','msg','company','g-recaptcha-response','recaptcha_token','recaptcha',
+          'page_url','pageUrl','url'];
 $extra = [];
 foreach ($data as $k => $v) {
     if (!in_array($k, $known, true) && is_scalar($v) && trim((string)$v) !== '') {
@@ -129,10 +148,10 @@ try {
     $stmt = $pdo->prepare("
         INSERT INTO bookings
             (form_name, full_name, email, phone, location, booking_date, booking_time,
-             guests, message, extra, ip_address, user_agent)
+             guests, message, page_url, extra, ip_address, user_agent)
         VALUES
             (:form_name, :full_name, :email, :phone, :location, :booking_date, :booking_time,
-             :guests, :message, :extra, :ip_address, :user_agent)
+             :guests, :message, :page_url, :extra, :ip_address, :user_agent)
     ");
     $stmt->execute([
         ':form_name'    => $formName,
@@ -144,6 +163,7 @@ try {
         ':booking_time' => $bTime,
         ':guests'       => $guests,
         ':message'      => $message,
+        ':page_url'     => $pageUrl ? substr((string)$pageUrl, 0, 255) : null,
         ':extra'        => $extra ? json_encode($extra, JSON_UNESCAPED_UNICODE) : null,
         ':ip_address'   => $_SERVER['REMOTE_ADDR'] ?? null,
         ':user_agent'   => substr($_SERVER['HTTP_USER_AGENT'] ?? '', 0, 255),
@@ -154,25 +174,47 @@ try {
     error_log('[KC booking] DB error: ' . $dbError);
 }
 
+function kc_humanize(string $key, ?string $val = null): string
+{
+    $val = $val ?? $key;
+    $map = [
+        'modal_reservation'    => 'Table Reservation',
+        'location_reservation' => 'Table Reservation',
+        'reservation'          => 'Table Reservation',
+        'contact'              => 'Contact Inquiry',
+        'private_event'        => 'Private Event',
+        'corporate'            => 'Corporate Catering',
+        'general'              => 'General Question',
+    ];
+    $lower = strtolower(trim((string)$val));
+    if (isset($map[$lower])) {
+        return $map[$lower];
+    }
+    return ucwords(str_replace(['_', '-'], ' ', $val));
+}
+
+$displayFormName = kc_humanize($formName);
+
 /* ---------- Build the labelled field set for email/sheet ---------- */
 $mailFields = array_filter([
-    'Form'     => ucfirst($formName),
-    'Name'     => $fullName,
-    'Phone'    => $phone,
-    'Email'    => $email,
-    'Location' => $location,
-    'Date'     => $bDate,
-    'Time'     => $bTime,
-    'Guests'   => $guests,
-    'Message'  => $message,
+    'Form'           => $displayFormName,
+    'Submitted From' => $pageUrl,
+    'Name'           => $fullName,
+    'Phone'          => $phone,
+    'Email'          => $email,
+    'Location'       => $location,
+    'Date'           => $bDate,
+    'Time'           => $bTime,
+    'Guests'         => $guests,
+    'Message'        => $message,
 ], fn($v) => $v !== null && $v !== '');
 foreach ($extra as $k => $v) {
-    $mailFields[ucfirst(str_replace('_', ' ', $k))] = $v;
+    $mailFields[ucfirst(str_replace('_', ' ', $k))] = kc_humanize($k, (string)$v);
 }
 
 /* ---------- Send email via SMTP ---------- */
 require_once __DIR__ . '/mailer.php';
-[$mailOk, $mailErr] = kc_send_mail($cfg, $formName, $mailFields, $email);
+[$mailOk, $mailErr] = kc_send_mail($cfg, $displayFormName, $mailFields, $email);
 if (!$mailOk) {
     error_log('[KC booking] Mail error: ' . $mailErr);
 }
@@ -190,6 +232,7 @@ if (!empty($cfg['google_sheet']['enabled']) && !empty($cfg['google_sheet']['webh
         'booking_time' => $bTime,
         'guests'       => $guests,
         'message'      => $message,
+        'page_url'     => $pageUrl ?? '',
         'extra'        => $extra ? json_encode($extra, JSON_UNESCAPED_UNICODE) : '',
     ], JSON_UNESCAPED_UNICODE);
     $ch = curl_init($cfg['google_sheet']['webhook_url']);

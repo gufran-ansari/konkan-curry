@@ -15,7 +15,14 @@ Desktop.ini
 *.swo
 *~
 .kilo/
+.kilocode/
+.codex
 .gemini/
+
+# Archives & Local Backups
+*.zip
+*.tar.gz
+kc/
 
 # Dependency & Node Directories
 node_modules/

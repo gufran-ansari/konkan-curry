@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://konkancurryseafoodrestaurant.com/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Menu Page -->
+  <url>
+    <loc>https://konkancurryseafoodrestaurant.com/menu</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://konkancurryseafoodrestaurant.com/about</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- All Locations -->
+  <url>
+    <loc>https://konkancurryseafoodrestaurant.com/locations</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Branch Location: Kharghar -->
+  <url>
+    <loc>https://konkancurryseafoodrestaurant.com/location/kharghar</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Branch Location: Kopar Khairane -->
+  <url>
+    <loc>https://konkancurryseafoodrestaurant.com/location/kopar-khairane</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Branch Location: Roadpali -->
+  <url>
+    <loc>https://konkancurryseafoodrestaurant.com/location/roadpali</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Us -->
+  <url>
+    <loc>https://konkancurryseafoodrestaurant.com/contact</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

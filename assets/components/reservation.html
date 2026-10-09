@@ -1,69 +1,98 @@
-<div class="contact-form-card bg-white p-4 p-md-5 rounded">
-  <form id="kc-contact-form">
-    <div class="row g-4">
-      <div class="col-12 col-md-6">
-        <label class="form-label fw-bold kc-form-label">Full Name</label>
+<div class="kc-loc-hero__card p-4 p-md-4 p-xl-4 text-start">
+  <div class="mb-3 text-start">
+    <div class="d-flex align-items-center justify-content-start gap-2 mb-1">
+      <span class="badge bg-danger bg-opacity-10 text-danger text-uppercase fw-bold px-2 py-1" style="font-size: 0.7rem; letter-spacing: 0.08em;">Instant Booking</span>
+    </div>
+    <h2 class="h4 fw-bold text-dark text-start mb-1" style="font-family: 'Roboto Condensed', sans-serif;">
+      Reserve Your Table
+    </h2>
+    <p class="small text-secondary text-start mb-0">
+      Book your authentic coastal dining experience.
+    </p>
+  </div>
+
+  <form id="kc-reservation-form" data-kc-form class="text-start">
+    <!-- Hidden form identification -->
+    <input type="hidden" name="form_name" value="location_reservation" />
+    <input type="hidden" name="page_url" value="" />
+
+    <div class="row g-2 g-md-3 text-start">
+      <!-- Full Name -->
+      <div class="col-12 col-sm-6 text-start">
+        <label class="form-label text-start d-block">Full Name</label>
         <input
           type="text"
-          class="form-control form-control-lg kc-input"
+          name="full_name"
+          class="form-control"
           placeholder="Your Name"
           required
         />
       </div>
-      <div class="col-12 col-md-6">
-        <label class="form-label fw-bold kc-form-label">Phone Number</label>
+
+      <!-- Phone Number -->
+      <div class="col-12 col-sm-6 text-start">
+        <label class="form-label text-start d-block">Phone Number</label>
         <input
           type="tel"
-          class="form-control form-control-lg kc-input"
+          name="phone"
+          class="form-control"
           placeholder="Your Phone"
           required
         />
       </div>
-      <div class="col-12 col-md-6">
-        <label class="form-label fw-bold kc-form-label">Email Address</label>
+
+      <!-- Email Address -->
+      <div class="col-12 col-sm-6 text-start">
+        <label class="form-label text-start d-block">Email Address</label>
         <input
           type="email"
-          class="form-control form-control-lg kc-input"
+          name="email"
+          class="form-control"
           placeholder="Your Email"
           required
         />
       </div>
-      <div class="col-12 col-md-6">
-        <label class="form-label fw-bold kc-form-label"
-          >Preferred Location</label
-        >
-        <select class="form-select form-select-lg kc-input" required>
-          <option value="" disabled selected>Select Location</option>
+
+      <!-- Preferred Location -->
+      <div class="col-12 col-sm-6 text-start">
+        <label class="form-label text-start d-block">Location</label>
+        <select class="form-select" name="location" required>
+          <option value="" disabled selected>Select Branch</option>
+          <option value="Kharghar">Kharghar (Sector 15)</option>
           <option value="Kopar Khairane">Kopar Khairane</option>
-          <option value="Kharghar">Kharghar</option>
-          <option value="Roadpali">Roadpali</option>
+          <option value="Roadpali">Roadpali (Kalamboli)</option>
         </select>
       </div>
-      <div class="col-12 col-md-6">
-        <label class="form-label fw-bold kc-form-label">Number of Guests</label>
-        <select class="form-select form-select-lg kc-input" required>
-          <option value="" disabled selected>Select Guests</option>
-          <option value="2">2 People</option>
-          <option value="3">3 People</option>
-          <option value="4">4 People</option>
-          <option value="5">5 People</option>
-          <option value="6+">6+ People (Event)</option>
+
+      <!-- Number of Guests -->
+      <div class="col-12 col-sm-6 text-start">
+        <label class="form-label text-start d-block">Guests</label>
+        <select class="form-select" name="guests" required>
+          <option value="" disabled selected>Number of Guests</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5">5 Guests</option>
+          <option value="6+">6+ Guests (Party)</option>
         </select>
       </div>
-      <div class="col-12 col-md-6">
-        <label class="form-label fw-bold kc-form-label">Preferred Date</label>
+
+      <!-- Preferred Date -->
+      <div class="col-12 col-sm-6 text-start">
+        <label class="form-label text-start d-block">Date</label>
         <input
           type="date"
           name="booking_date"
-          class="form-control form-control-lg kc-input"
+          class="form-control"
           required
         />
       </div>
-      <div class="col-12 col-md-6">
-        <label class="form-label fw-bold kc-form-label">Preferred Time</label>
-        <select class="form-select form-select-lg kc-input" required>
+
+      <!-- Preferred Time -->
+      <div class="col-12 col-sm-6 text-start">
+        <label class="form-label text-start d-block">Time</label>
+        <select class="form-select" name="booking_time" required>
           <option value="" disabled selected>Select Time</option>
-          <option value="11:00 AM">11:00 AM</option>
           <option value="11:30 AM">11:30 AM</option>
           <option value="12:00 PM">12:00 PM</option>
           <option value="12:30 PM">12:30 PM</option>
@@ -72,13 +101,6 @@
           <option value="02:00 PM">02:00 PM</option>
           <option value="02:30 PM">02:30 PM</option>
           <option value="03:00 PM">03:00 PM</option>
-          <option value="03:30 PM">03:30 PM</option>
-          <option value="04:00 PM">04:00 PM</option>
-          <option value="04:30 PM">04:30 PM</option>
-          <option value="05:00 PM">05:00 PM</option>
-          <option value="05:30 PM">05:30 PM</option>
-          <option value="06:00 PM">06:00 PM</option>
-          <option value="06:30 PM">06:30 PM</option>
           <option value="07:00 PM">07:00 PM</option>
           <option value="07:30 PM">07:30 PM</option>
           <option value="08:00 PM">08:00 PM</option>
@@ -88,45 +110,44 @@
           <option value="10:00 PM">10:00 PM</option>
           <option value="10:30 PM">10:30 PM</option>
           <option value="11:00 PM">11:00 PM</option>
-          <option value="11:30 PM">11:30 PM</option>
         </select>
       </div>
-      <div class="col-12 col-md-6">
-        <label class="form-label fw-bold kc-form-label">Inquiry Type</label>
-        <select class="form-select form-select-lg kc-input" required>
-          <option value="" disabled selected>Select Inquiry Type</option>
-          <option value="reservation">Table Reservation</option>
-          <option value="private_event">Private Event</option>
-          <option value="corporate">Corporate Catering</option>
-          <option value="general">General Question</option>
+
+      <!-- Inquiry Type -->
+      <div class="col-12 col-sm-6 text-start">
+        <label class="form-label text-start d-block">Inquiry Type</label>
+        <select class="form-select" name="inquiry_type">
+          <option value="Table Reservation" selected>Table Reservation</option>
+          <option value="Family Event">Family Celebration</option>
+          <option value="Corporate Booking">Corporate Booking</option>
+          <option value="Catering Query">Outdoor Catering</option>
         </select>
       </div>
-      <div class="col-12">
-        <label class="form-label fw-bold kc-form-label"
-          >Message or Special Requests</label
-        >
+
+      <!-- Special Requests -->
+      <div class="col-12 text-start">
+        <label class="form-label text-start d-block">Special Requests</label>
         <textarea
-          class="form-control kc-input"
-          rows="6"
-          placeholder="Any dietary requirements or special occasions?"
+          class="form-control"
+          name="message"
+          rows="2"
+          placeholder="Any dietary preferences or special occasion notes?"
         ></textarea>
       </div>
-      <div class="col-12 pt-2">
+
+      <!-- Submit Button & Status Message -->
+      <div class="col-12 pt-2 text-start">
         <button
           type="submit"
-          class="kc-button kc-button--primary w-100 text-white border-0 py-3 d-flex justify-content-center"
+          class="kc-button kc-button--primary w-100 text-white border-0 py-2 d-flex justify-content-center align-items-center gap-2"
+          style="font-size: 0.95rem; font-weight: 600;"
         >
-          Make Reservation
+          <span>Confirm Reservation</span>
+          <i class="fa-solid fa-arrow-right small"></i>
         </button>
-        <!-- Success Message Container -->
-        <div
-          id="kc-form-success-msg"
-          class="alert alert-success mt-3 d-none mb-0 text-center"
-          role="alert"
-        >
-          Thank you! Your request has been received. We will get back to you
-          shortly.
-        </div>
+
+        <!-- Status Message Container -->
+        <div class="kc-form-status mt-2 small text-start" style="min-height: 1.25rem;"></div>
       </div>
     </div>
   </form>

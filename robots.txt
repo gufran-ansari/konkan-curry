@@ -1,0 +1,17 @@
+# ==============================================================================
+# Konkan Curry — Robots.txt
+# Controls search engine crawler indexing and crawling behavior
+# ==============================================================================
+
+User-agent: *
+Allow: /
+
+# Disallow internal backend and configuration endpoints
+Disallow: /backend/
+Disallow: /.git/
+
+# Disallow standalone HTML component partials (dynamically loaded via JS)
+Disallow: /assets/components/
+
+# XML Sitemap Location
+Sitemap: https://konkancurryseafoodrestaurant.com/sitemap.xml

@@ -1,8 +1,6 @@
-# Only allow the public endpoint to be reached from the browser.
-# Everything else (config, db, mailer, PHPMailer lib) is include-only.
+<Files "submit.php">
+    Require all granted
+</Files>
 <FilesMatch "^(config|db|mailer)\.php$">
     Require all denied
 </FilesMatch>
-
-# Block direct access to the library folder
-RedirectMatch 403 ^/.*/backend/lib/.*$

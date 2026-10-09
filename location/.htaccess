@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteBase /location/
+
+# Redirect any relative main page requests to root: e.g. /location/kharghar/about/ -> /about/
+RewriteCond %{REQUEST_URI} ^/location/.+/(about|menu|locations|contact)(\.html)?/?$ [NC]
+RewriteRule ^.+/(about|menu|locations|contact)(\.html)?/?$ /%1/ [R=301,L,NE]
+
+# Force trailing slash: /location/kharghar -> /location/kharghar/
+RewriteCond %{REQUEST_URI} ^/location/[^/]+$
+RewriteRule ^([^/]+)$ /location/$1/ [R=301,L]
+
+# Serve slug.html for /location/slug/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1.html [L]
+

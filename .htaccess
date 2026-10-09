@@ -1,50 +1,17 @@
-# ==============================================================================
-# Konkan Curry — Apache .htaccess Configuration
-# Clean URLs (Removes .html Extension), Security & Performance Caching
-# ==============================================================================
-
-# Disable directory browsing for security
-Options -Indexes -MultiViews
-
-# Enable Rewrite Engine
+Options -Indexes
 RewriteEngine On
 
-# ------------------------------------------------------------------------------
-# 1. Redirect requests with .html to the clean URL (301 Permanent Redirect)
-#    Example: /about.html -> /about | /location/kharghar.html -> /location/kharghar
-# ------------------------------------------------------------------------------
+# Force trailing slash on all URLs (except actual files and PHP scripts)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteCond %{REQUEST_URI} !\.(php)$ [NC]
+RewriteRule ^(.*)$ $1/ [R=301,L]
+
+# Remove .html extension and redirect to trailing slash
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1 [R=301,L]
+RewriteRule ^ /%1/ [R=301,L]
 
-# ------------------------------------------------------------------------------
-# 2. Internally serve the .html file when clean URL is requested
-#    Example: /about -> serves /about.html | /locations -> serves /locations.html
-# ------------------------------------------------------------------------------
+# Internally serve the .html file when URL with trailing slash is requested
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^.]+)$ $1.html [L,QSA]
-
-# ------------------------------------------------------------------------------
-# 3. Default Index & 404 Fallback Page
-# ------------------------------------------------------------------------------
-DirectoryIndex index.html
-ErrorDocument 404 /index.html
-
-# ------------------------------------------------------------------------------
-# 4. Gzip Compression for Fast Load Speed
-# ------------------------------------------------------------------------------
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
-</IfModule>
-
-# ------------------------------------------------------------------------------
-# 5. Leverage Browser Caching
-# ------------------------------------------------------------------------------
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-</IfModule>
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)/$ $1.html [L]
